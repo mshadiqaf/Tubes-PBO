@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="parentContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="600.0" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.tubespbo.Controllers.LandingPageController">
+    <children>
+        <HBox fx:id="pageContainer" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" nodeOrientation="LEFT_TO_RIGHT" prefHeight="600.0" prefWidth="800.0" styleClass="root">
+            <children>
+                <VBox fx:id="vBox1" alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="700.0" minHeight="-Infinity" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label styleClass="header" text="ISI | Informasi Seputar ITK" textOverrun="CLIP" wrapText="true" VBox.vgrow="ALWAYS">
+                            <font>
+                                <Font name="Inter SemiBold" size="50.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="25.0" />
+                            </VBox.margin>
+                            <textFill>
+                                <LinearGradient endX="1.0" endY="1.0" startY="1.0">
+                                    <stops>
+                                        <Stop>
+                                            <color>
+                                                <Color />
+                                            </color>
+                                        </Stop>
+                                        <Stop offset="0.006729475100942127">
+                                            <color>
+                                                <Color red="1.0" green="1.0" blue="1.0" />
+                                            </color>
+                                        </Stop>
+                                        <Stop offset="0.19351672520762894">
+                                            <color>
+                                                <Color red="1.0" green="1.0" blue="1.0" />
+                                            </color>
+                                        </Stop>
+                                        <Stop offset="0.40117519613957914">
+                                            <color>
+                                                <Color red="0.7879733443260193" green="0.5809999704360962" blue="0.8299999833106995" />
+                                            </color>
+                                        </Stop>
+                                        <Stop offset="1.0">
+                                            <color>
+                                                <Color red="0.5817232131958008" green="0.4183625876903534" blue="0.7684210538864136" />
+                                            </color>
+                                        </Stop>
+                                    </stops>
+                                </LinearGradient>
+                            </textFill>
+                        </Label>
+                        <Label styleClass="subheader" text="Berkeliling kampus dengan cerdas dan efisien menggunakan aplikasi map interaktif kami! Didesain untuk memudahkan mahasiswa, staf, dan pengunjung, aplikasi ini memberikan akses instan ke semua fasilitas." textOverrun="CLIP" wrapText="true" VBox.vgrow="ALWAYS">
+                            <font>
+                                <Font name="Inter Regular" size="24.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="5.0" />
+                            </VBox.margin>
+                            <textFill>
+                                <LinearGradient endX="1.0" endY="1.0" startY="1.0">
+                                    <stops>
+                                        <Stop>
+                                            <color>
+                                                <Color red="1.0" green="1.0" blue="1.0" />
+                                            </color>
+                                        </Stop>
+                                        <Stop offset="0.006729475100942127">
+                                            <color>
+                                                <Color red="1.0" green="1.0" blue="1.0" />
+                                            </color>
+                                        </Stop>
+                                        <Stop offset="0.19351672520762894">
+                                            <color>
+                                                <Color red="1.0" green="1.0" blue="1.0" />
+                                            </color>
+                                        </Stop>
+                                        <Stop offset="1.0">
+                                            <color>
+                                                <Color red="0.7322001457214355" green="0.28951266407966614" blue="0.8315789699554443" />
+                                            </color>
+                                        </Stop>
+                                    </stops>
+                                </LinearGradient>
+                            </textFill>
+                        </Label>
+                        <Button fx:id="startButton" mnemonicParsing="false" styleClass="button-start" text="Get Started" textFill="#4b5dff80" textOverrun="CLIP" wrapText="true" VBox.vgrow="ALWAYS">
+                            <font>
+                                <Font name="Inter SemiBold" size="24.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="25.0" top="25.0" />
+                            </VBox.margin>
+                            <padding>
+                                <Insets bottom="8.0" left="36.0" right="36.0" top="8.0" />
+                            </padding>
+                            <opaqueInsets>
+                                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                            </opaqueInsets>
+                        </Button>
+                    </children>
+                    <HBox.margin>
+                        <Insets left="150.0" right="20.0" />
+                    </HBox.margin>
+                </VBox>
+                <VBox fx:id="vBox2" alignment="CENTER_RIGHT" maxWidth="700.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <ImageView fitHeight="400.0" fitWidth="300.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                            <image>
+                                <Image url="@../StylesAssets/Assets/Logos/LambangITK.png" />
+                            </image>
+                            <effect>
+                                <DropShadow blurType="GAUSSIAN" height="100.0" radius="49.5" spread="0.6" width="100.0">
+                                    <color>
+                                        <Color opacity="0.30091190338134766" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                            <viewport>
+                                <Rectangle2D />
+                            </viewport>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                        </ImageView>
+                    </children>
+                    <HBox.margin>
+                        <Insets left="10.0" right="150.0" />
+                    </HBox.margin>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</StackPane>

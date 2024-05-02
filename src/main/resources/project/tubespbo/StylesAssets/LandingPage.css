@@ -1,0 +1,37 @@
+.root {
+    -fx-background-image: url("Assets/Backgrounds/GradientBackground.png");
+    -fx-background-size: 1920 1080;
+}
+
+.header {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 100, 0.5, 0.0, 0);
+    -fx-font-smoothing-type: lcd;
+}
+
+.subheader {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 75, 0.5, 0.0, 0);
+    -fx-font-smoothing-type: lcd;
+}
+
+.button-start {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0.0, 3);
+    -fx-background-color: linear-gradient(to bottom, #3d7fff, #4b5dff);
+    -fx-background-radius: 25;
+    -fx-background-insets: 0,1,2;
+    -fx-text-fill: white;
+    -fx-border-width: 1;
+    -fx-border-radius: 25;
+    -fx-border-color: #3961d9;
+    -fx-cursor: HAND;
+}
+
+.button-start:hover {
+    -fx-background-color: linear-gradient(to bottom, #1F69FF, #3347FF);
+    -fx-border-color: #224bd3;
+}
+
+.button-start:pressed {
+    -fx-text-fill: #E0E0E0;
+}
+
+
