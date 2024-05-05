@@ -1,5 +1,5 @@
 .root {
-    -fx-background-image: url("Assets/Backgrounds/GradientBackgroundDark.png");
+    -fx-background-image: url("../Assets/Backgrounds/GradientBackgroundDark.png");
     -fx-background-size: 1920 1080;
 }
 
@@ -96,7 +96,7 @@
 
 .button-theme {
     -fx-background-color: transparent;
-    -fx-background-image: url("Assets/Icons/LightMode.png");
+    -fx-background-image: url("../Assets/Icons/LightMode.png");
     -fx-background-size: 60 60;
     -fx-background-position: center;
     -fx-cursor: HAND;
@@ -104,14 +104,14 @@
 
 .button-showpass {
     -fx-background-color: transparent;
-    -fx-background-image: url("Assets/Icons/Show.png");
+    -fx-background-image: url("../Assets/Icons/Show.png");
     -fx-background-size: 24 24;
     -fx-cursor: HAND;
 }
 
 .button-hidepass {
     -fx-background-color: transparent;
-    -fx-background-image: url("Assets/Icons/Hide.png");
+    -fx-background-image: url("../Assets/Icons/Hide.png");
     -fx-background-size: 24 24;
     -fx-cursor: HAND;
 }

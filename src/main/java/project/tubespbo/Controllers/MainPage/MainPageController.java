@@ -1,4 +1,4 @@
-package project.tubespbo.Controllers;
+package project.tubespbo.Controllers.MainPage;
 
 import project.tubespbo.Models.LoginModel;
 

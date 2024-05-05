@@ -1,5 +1,5 @@
 .root {
-    -fx-background-image: url("Assets/Backgrounds/GradientBackground.png");
+    -fx-background-image: url("../Assets/Backgrounds/GradientBackground.png");
     -fx-background-size: 1920 1080;
 }
 

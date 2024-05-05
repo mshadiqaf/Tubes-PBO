@@ -215,7 +215,7 @@ public class LoginPageController {
         if (isLightMode) {
 
             stylesheets.clear();
-            stylesheets.add(Objects.requireNonNull(getClass().getResource("/project/tubespbo/StylesAssets/LoginDarkTheme.css")).toExternalForm());
+            stylesheets.add(Objects.requireNonNull(getClass().getResource("/project/tubespbo/Styles/LoginDarkTheme.css")).toExternalForm());
             themeMode.getStyleClass().clear();
             themeMode.getStyleClass().add("image-theme");
             isLightMode = false;
@@ -224,7 +224,7 @@ public class LoginPageController {
         } else {
 
             stylesheets.clear();
-            stylesheets.add(Objects.requireNonNull(getClass().getResource("/project/tubespbo/StylesAssets/LoginLightTheme.css")).toExternalForm());
+            stylesheets.add(Objects.requireNonNull(getClass().getResource("/project/tubespbo/Styles/LoginLightTheme.css")).toExternalForm());
             themeMode.getStyleClass().clear();
             themeMode.getStyleClass().add("image-theme");
             isLightMode = true;
