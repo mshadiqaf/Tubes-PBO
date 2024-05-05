@@ -1,0 +1,137 @@
+.root {
+    -fx-background-image: url("Assets/Backgrounds/GradientBackgroundLight.png");
+    -fx-background-size: 1920 1080;
+
+    /* Color Variables*/
+
+}
+
+.pane {
+    -fx-background-color: white;
+    -fx-background-radius: 30;
+    -fx-border-width: 1;
+    -fx-border-color: #00000033;
+    -fx-border-radius: 30;
+    -fx-effect: dropshadow(gaussian, #00000032, 75, 0, 0, 10);
+}
+
+.line-header-divider {
+    -fx-stoke: linear-gradient(from 0.0% 100.0% to 100.0% 100.0%, #00000000 0.0%, #00000000 0.6729%, #00000066 51.2195%, #00000000 100.0%);
+}
+
+.line-or-divider-right {
+    -fx-stroke: linear-gradient(from 0.0% 100.0% to 100.0% 100.0%, #00000032 0.0%, #00000008 100.0%);
+}
+
+.line-or-divider-left {
+    -fx-stroke: linear-gradient(from 0.0% 100.0% to 100.0% 100.0%, #00000008 0.0%, #00000033 100.0%);
+}
+
+.label-header {
+    -fx-text-fill: #101828;
+}
+
+.label-subheader {
+    -fx-text-fill: #667085;
+}
+
+.label-usernamepassword {
+    -fx-text-fill: #101828;
+}
+
+.label-or {
+    -fx-text-fill: #667085;
+}
+
+.label-alert {
+    -fx-text-fill: red;
+}
+
+.field-username {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-width: 1;
+    -fx-border-color: #D0D5DD;
+    -fx-border-radius: 10;
+    -fx-text-fill: black;
+    -fx-padding: 0 0 0 10;
+}
+
+.field-username:hover {
+    -fx-border-color: #C3C9D1;
+}
+
+.field-username:focused {
+     -fx-border-color: #18181b;
+}
+
+.field-password {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-width: 1;
+    -fx-border-color: #D0D5DD;
+    -fx-border-radius: 10;
+    -fx-text-fill: black;
+    -fx-padding: 0 30 0 10;
+}
+
+.field-password:hover {
+    -fx-border-color: #C3C9D1;
+}
+
+.field-password:focused {
+     -fx-border-color: #18181b;
+}
+
+.button-showpass {
+    -fx-background-color: transparent;
+    -fx-background-image: url("Assets/Icons/Show.png");
+    -fx-background-size: 24 24;
+    -fx-cursor: HAND;
+}
+
+.button-hidepass {
+    -fx-background-color: transparent;
+    -fx-background-image: url("Assets/Icons/Hide.png");
+    -fx-background-size: 24 24;
+    -fx-cursor: HAND;
+}
+
+.button-user {
+    -fx-background-color: black;
+    -fx-background-radius: 10;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-border-radius: 10;
+    -fx-effect: dropshadow(gaussian, #00000032, 20, 0, 0, 5);
+}
+
+.button-user:hover {
+    -fx-background-color: #18181b;
+}
+
+.button-user:focused {
+    -fx-background-color: #18181b;
+}
+
+.button-guest {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-text-fill: black;
+    -fx-border-color: black;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-cursor: hand;
+}
+
+.button-guest:hover {
+    -fx-background-color: #f0f0f0;
+    -fx-border-color: #18181b;
+    -fx-text-fill: #18181b;
+}
+
+.button-guest:focused {
+    -fx-background-color: #f0f0f0;
+    -fx-border-color: #18181b;
+    -fx-text-fill: #18181b;
+}

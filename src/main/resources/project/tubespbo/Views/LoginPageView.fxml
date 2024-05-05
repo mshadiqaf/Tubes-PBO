@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.*?>
+<StackPane fx:id="rootLoginPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="root" stylesheets="@../StylesAssets/LoginLightTheme.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.tubespbo.Controllers.LoginPageController">
+   <children>
+      <VBox fx:id="loginPane" maxHeight="512.0" maxWidth="408.0" minHeight="512.0" minWidth="408.0" prefHeight="500.0" prefWidth="408.0" styleClass="pane">
+         <children>
+            <Label prefHeight="0.0" prefWidth="155.0" styleClass="label-header" text="Welcome." textFill="#ffffff33">
+               <font>
+                  <Font name="Inter SemiBold" size="32.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="128.0" top="48.0" />
+               </VBox.margin>
+            </Label>
+            <Label prefHeight="36.0" prefWidth="251.0" styleClass="label-subheader" text="Sign in to access additional feature, such as room booking." textAlignment="CENTER" textFill="#ffffff33" wrapText="true">
+               <font>
+                  <Font name="Inter Medium" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="78.0" top="8.0" />
+               </VBox.margin>
+            </Label>
+            <Label styleClass="label-usernamepassword" text="Username" textFill="#2b71ff">
+               <font>
+                  <Font name="Inter SemiBold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="32.0" right="32.0" top="36.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="usernameField" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="320.0" promptText="Enter your username" styleClass="field-username">
+               <font>
+                  <Font name="Inter Medium" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="32.0" right="32.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label styleClass="label-usernamepassword" text="Password">
+               <font>
+                  <Font name="Inter SemiBold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="32.0" right="32.0" top="12.0" />
+               </VBox.margin>
+            </Label>
+            <StackPane fx:id="passwordContainer">
+               <VBox.margin>
+                  <Insets left="32.0" right="32.0" />
+               </VBox.margin>
+               <children>
+                  <TextField fx:id="passwordFieldShown" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="320.0" promptText="Enter your password" styleClass="field-username" visible="false">
+                     <font>
+                        <Font name="Inter Medium" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <PasswordField fx:id="passwordField" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="320.0" promptText="Enter your password" styleClass="field-password">
+                     <font>
+                        <Font name="Inter Medium" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </PasswordField>
+                  <Button fx:id="showPasswordButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showPassword" prefHeight="24.0" prefWidth="24.0" styleClass="button-hidepass" StackPane.alignment="CENTER_RIGHT">
+                     <StackPane.margin>
+                        <Insets right="8.0" />
+                     </StackPane.margin>
+                  </Button>
+               </children>
+            </StackPane>
+            <Button fx:id="signInButton" alignment="CENTER" mnemonicParsing="false" onAction="#loginAsUser" prefHeight="32.0" prefWidth="400.0" styleClass="button-user" text="Sign in" textAlignment="CENTER" textFill="#00000032">
+               <font>
+                  <Font name="Inter SemiBold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="32.0" right="32.0" top="48.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="16.0" right="16.0" top="8.0" />
+               </padding>
+            </Button>
+            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="400.0">
+               <children>
+                  <Line endX="100.0" startX="-50.0" styleClass="line-or-divider-left">
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0" startY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color opacity="0.029999999329447746" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color opacity="0.20060792565345764" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </stroke>
+                  </Line>
+                  <Label styleClass="label-or" text="Or" textFill="#667085" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets left="12.0" right="12.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Inter Medium" size="13.0" />
+                     </font>
+                  </Label>
+                  <Line endX="100.0" startX="-50.0" styleClass="line-or-divider-right">
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0" startY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.13333334028720856" green="0.14901961386203766" blue="0.18039216101169586" opacity="0.20000000298023224" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color opacity="0.0331306979060173" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </stroke>
+                  </Line>
+               </children>
+            </HBox>
+            <Button fx:id="guestButton" alignment="CENTER" mnemonicParsing="false" onAction="#loginAsGuest" prefHeight="32.0" prefWidth="400.0" styleClass="button-guest" text="Continue as a guest" textAlignment="CENTER">
+               <font>
+                  <Font name="Inter SemiBold" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="32.0" right="32.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="8.0" left="16.0" right="16.0" top="8.0" />
+               </padding>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</StackPane>
