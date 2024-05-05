@@ -4,6 +4,7 @@ import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -27,7 +28,7 @@ public class LandingPageController {
     private Button startButton;
 
     @FXML
-    private void loadMain() throws IOException {
+    private void loadMain(ActionEvent event) throws IOException {
         startButton.setDisable(true);
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/project/tubespbo/Views/LoginPageView.fxml"));

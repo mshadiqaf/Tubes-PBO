@@ -1,58 +1,55 @@
 .root {
-    -fx-background-image: url("Assets/Backgrounds/GradientBackgroundLight.png");
+    -fx-background-image: url("Assets/Backgrounds/GradientBackgroundDark.png");
     -fx-background-size: 1920 1080;
-
-    /* Color Variables*/
-
 }
 
 .pane {
-    -fx-background-color: white;
+    -fx-background-color: #0E0E15;
     -fx-background-radius: 30;
     -fx-border-width: 1;
-    -fx-border-color: #00000033;
+    -fx-border-color: #ffffff33;
     -fx-border-radius: 30;
-    -fx-effect: dropshadow(gaussian, #00000032, 75, 0, 0, 10);
+    -fx-effect: dropshadow(gaussian, #0000007f, 75, 0, 0, 20);
 }
 
 .pane-round-outer {
-    -fx-fill: white;
+    -fx-fill: #0E0E15;
     -fx-stroke-width: 1;
-    -fx-stroke: #00000033;
+    -fx-stroke: #ffffff33;
 }
 
 .pane-round-inner {
-    -fx-fill: white;
+    -fx-fill: #0E0E15;
     -fx-stroke-width: 1;
     -fx-stroke: transparent;
 }
 
 .line-header-divider {
-    -fx-stoke: linear-gradient(from 0.0% 100.0% to 100.0% 100.0%, #00000000 0.0%, #00000000 0.6729%, #00000066 51.2195%, #00000000 100.0%);
+    -fx-stroke:linear-gradient(from 0.0% 100.0% to 100.0% 100.0%, #00000000 0.0%, #00000000 0.6729%, #22262e 49.5122%, #00000000 100.0%);
 }
 
 .line-or-divider-right {
-    -fx-stroke: linear-gradient(from 0.0% 100.0% to 100.0% 100.0%, #00000032 0.0%, #00000008 100.0%);
+    -fx-stroke: linear-gradient(from 0.0% 100.0% to 100.0% 100.0%, #ffffff08 0.0%, #22262e33 100.0%);
 }
 
 .line-or-divider-left {
-    -fx-stroke: linear-gradient(from 0.0% 100.0% to 100.0% 100.0%, #00000008 0.0%, #00000033 100.0%);
+    -fx-stroke: linear-gradient(from 0.0% 100.0% to 100.0% 100.0%, #22262e33 0.0%, #ffffff08 100.0%);
 }
 
 .label-header {
-    -fx-text-fill: #101828;
+    -fx-text-fill: white;
 }
 
 .label-subheader {
-    -fx-text-fill: #667085;
+    -fx-text-fill: #626D7C;
 }
 
 .label-usernamepassword {
-    -fx-text-fill: #101828;
+    -fx-text-fill: white;
 }
 
 .label-or {
-    -fx-text-fill: #667085;
+    -fx-text-fill: #626D7C;
 }
 
 .label-alert {
@@ -60,13 +57,14 @@
 }
 
 .field-username {
-    -fx-background-color: white;
+    -fx-background-color: #151A1F;
     -fx-background-radius: 10;
     -fx-border-width: 1;
-    -fx-border-color: #D0D5DD;
+    -fx-border-color: #343B45;
     -fx-border-radius: 10;
-    -fx-text-fill: black;
+    -fx-text-fill: #ffffff;
     -fx-padding: 0 0 0 10;
+    -fx-prompt-text-fill: #343B45;
 }
 
 .field-username:hover {
@@ -74,31 +72,32 @@
 }
 
 .field-username:focused {
-    -fx-border-color: #18181b;
+     -fx-border-color: #3259E8;
 }
 
 .field-password {
-    -fx-background-color: white;
+    -fx-background-color: #151A1F;
     -fx-background-radius: 10;
     -fx-border-width: 1;
-    -fx-border-color: #D0D5DD;
+    -fx-border-color: #343B45;
     -fx-border-radius: 10;
-    -fx-text-fill: black;
+    -fx-text-fill: #ffffff;
     -fx-padding: 0 30 0 10;
+    -fx-prompt-text-fill: #343B45;
 }
 
 .field-password:hover {
-    -fx-border-color: #C3C9D1;
+    -fx-border-color: #D0D5DD;
 }
 
 .field-password:focused {
-    -fx-border-color: #18181b;
+     -fx-border-color: #3259E8;
 }
 
 .button-theme {
     -fx-background-color: transparent;
-    -fx-background-image: url("Assets/Icons/DarkMode.png");
-    -fx-background-size: 72 72;
+    -fx-background-image: url("Assets/Icons/LightMode.png");
+    -fx-background-size: 60 60;
     -fx-background-position: center;
     -fx-cursor: HAND;
 }
@@ -118,27 +117,27 @@
 }
 
 .button-user {
-    -fx-background-color: black;
+    -fx-background-color: #3259E8;
     -fx-background-radius: 10;
     -fx-text-fill: white;
     -fx-cursor: hand;
     -fx-border-radius: 10;
-    -fx-effect: dropshadow(gaussian, #00000032, 20, 0, 0, 5);
+    -fx-effect: dropshadow(gaussian, #3259e833, 20, 0, 0, 5);
 }
 
 .button-user:hover {
-    -fx-background-color: #18181b;
+    -fx-background-color: #213FC0;
 }
 
 .button-user:focused {
-    -fx-background-color: #18181b;
+    -fx-background-color: #213FC0;
 }
 
 .button-guest {
-    -fx-background-color: white;
+    -fx-background-color: #0E0E15;
     -fx-background-radius: 10;
-    -fx-text-fill: black;
-    -fx-border-color: black;
+    -fx-text-fill: white;
+    -fx-border-color: #343B45;
     -fx-border-width: 1;
     -fx-border-radius: 10;
     -fx-cursor: hand;
@@ -146,12 +145,12 @@
 
 .button-guest:hover {
     -fx-background-color: #f0f0f0;
-    -fx-border-color: #18181b;
+    -fx-border-width: 0;
     -fx-text-fill: #18181b;
 }
 
 .button-guest:focused {
     -fx-background-color: #f0f0f0;
-    -fx-border-color: #18181b;
+    -fx-border-width: 0;
     -fx-text-fill: #18181b;
 }

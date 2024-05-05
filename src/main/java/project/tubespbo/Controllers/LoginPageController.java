@@ -1,32 +1,38 @@
 package project.tubespbo.Controllers;
 
+import project.tubespbo.Models.AlertModel;
+import project.tubespbo.Models.LoginModel;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.effect.BlendMode;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import project.tubespbo.Models.AlertModel;
-import project.tubespbo.Models.LoginModel;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class LoginPageController {
 
-    private final AlertModel alertUsername = new AlertModel();
-    private final AlertModel alertPassword = new AlertModel();
-    private final LoginModel loginModel = new LoginModel();
+    private boolean isLightMode = true;
+    private AlertModel alertUsername = new AlertModel();
+    private AlertModel alertPassword = new AlertModel();
+    private LoginModel loginModel = new LoginModel();
 
     @FXML
     private StackPane rootLoginPane, passwordContainer;
 
     @FXML
     private VBox loginPane;
+
+    @FXML
+    private ImageView themeMode;
 
     @FXML
     private TextField usernameField, passwordFieldShown;
@@ -40,6 +46,7 @@ public class LoginPageController {
     public void switchScene() throws IOException {
 
         signInButton.setDisable(true);
+        guestButton.setDisable(true);
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/project/tubespbo/Views/MainPageView.fxml"));
         Parent root = loader.load();
@@ -139,8 +146,6 @@ public class LoginPageController {
         loginModel.setRole("Guest");
         switchScene();
 
-        System.out.println("Login as a : " + loginModel.getRole());
-
     }
 
     private void showAlert(AlertModel field) {
@@ -168,12 +173,10 @@ public class LoginPageController {
             if (loginPane.getChildren().contains(alertUsername.getAlertLabel())) {
 
                 VBox.setMargin(signInButton, new Insets(20, 30, 0, 30));
-                System.out.println("Contain alertUsername : " + VBox.getMargin(signInButton));
 
             } else {
 
                 VBox.setMargin(signInButton, new Insets(30, 30, 0, 30));
-                System.out.println("non-Contain alertUsername : " + VBox.getMargin(signInButton));
 
             }
 
@@ -199,6 +202,33 @@ public class LoginPageController {
             passwordFieldShown.setVisible(false);
             showPasswordButton.getStyleClass().clear();
             showPasswordButton.getStyleClass().add("button-hidepass");
+
+        }
+
+    }
+
+    @FXML
+    private void changeThemeMode() {
+
+        ObservableList<String> stylesheets = rootLoginPane.getStylesheets();
+
+        if (isLightMode) {
+
+            stylesheets.clear();
+            stylesheets.add(Objects.requireNonNull(getClass().getResource("/project/tubespbo/StylesAssets/LoginDarkTheme.css")).toExternalForm());
+            themeMode.getStyleClass().clear();
+            themeMode.getStyleClass().add("image-theme");
+            isLightMode = false;
+            showPasswordButton.setBlendMode(BlendMode.ADD);
+
+        } else {
+
+            stylesheets.clear();
+            stylesheets.add(Objects.requireNonNull(getClass().getResource("/project/tubespbo/StylesAssets/LoginLightTheme.css")).toExternalForm());
+            themeMode.getStyleClass().clear();
+            themeMode.getStyleClass().add("image-theme");
+            isLightMode = true;
+            showPasswordButton.setBlendMode(BlendMode.SRC_ATOP);
 
         }
 
