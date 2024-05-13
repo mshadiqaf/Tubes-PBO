@@ -5,8 +5,9 @@ module project.tubespbo {
 
     requires net.synedra.validatorfx;
     requires eu.hansolo.tilesfx;
-    requires org.controlsfx.controls;
     requires java.logging;
+    requires java.desktop;
+    requires org.controlsfx.controls;
 
     opens project.tubespbo to javafx.fxml;
     exports project.tubespbo;
