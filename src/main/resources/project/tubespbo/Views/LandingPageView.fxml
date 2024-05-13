@@ -117,7 +117,7 @@
                     <children>
                         <ImageView fitHeight="400.0" fitWidth="300.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                             <image>
-                                <Image url="@../Assets/Logos/LambangITK.png" />
+                                <Image url="@../Assets/Logos/LogoITK.png" />
                             </image>
                             <effect>
                                 <DropShadow blurType="GAUSSIAN" height="100.0" radius="49.5" spread="0.6" width="100.0">
