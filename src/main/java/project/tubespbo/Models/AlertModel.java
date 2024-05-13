@@ -15,8 +15,9 @@ public class AlertModel {
 
     public AlertModel(String text) {
         this.alertLabel = new Label(text);
-        this.alertLabel.setTextFill(Color.valueOf("cf313b"));
-        this.alertLabel.setFont(Font.font("Inter Medium", 14));
+
+        this.alertLabel.setTextFill(Color.web("#cf313b"));
+        this.alertLabel.setFont(Font.font("Inter", 14));
     }
 
     public AlertModel(Alert.AlertType type, String title, String header, String context) {
@@ -29,39 +30,51 @@ public class AlertModel {
     public void setAlertLabel(String text) {
         if (this.alertLabel == null) {
             this.alertLabel = new Label(text);
-            this.alertLabel.setTextFill(Color.valueOf("cf313b"));
-            this.alertLabel.setFont(Font.font("Inter Medium", 14));
+            this.alertLabel.setTextFill(Color.web("#cf313b"));
+            this.alertLabel.setFont(Font.font("Inter", 14));
         } else {
             this.alertLabel.setText(text);
         }
     }
 
     public void setAlertBox(Alert.AlertType type, String title, String header, String context) {
-        if (this.alertBox == null) {
-            this.alertBox = new Alert(type);
-            this.alertBox.setTitle(title);
-            this.alertBox.setHeaderText(header);
-            this.alertBox.setContentText(context);
-        } else {
-            this.alertBox.setTitle(title);
-            this.alertBox.setHeaderText(header);
-            this.alertBox.setContentText(context);
-        }
+        this.alertBox = new Alert(type);
+        this.alertBox.setTitle(title);
+        this.alertBox.setHeaderText(header);
+        this.alertBox.setContentText(context);
     }
 
     public Label getAlertLabel() {
         return this.alertLabel;
     }
 
-    public Alert getAlertBox() { return this.alertBox; }
+    public Alert getAlertBox() { return alertBox; }
 
-    public String getTitle() { return this.alertBox.getTitle(); }
+    public String getTitle() {
+        if (this.alertBox != null) {
+            return this.alertBox.getTitle();
+        }
+        return null;
+    }
 
-    public String getHeader() { return this.alertBox.getHeaderText(); }
+    public String getHeader() {
+        if (this.alertBox != null) {
+            return this.alertBox.getHeaderText();
+        }
+        return null;
+    }
 
-    public String getContext() { return this.alertBox.getContentText(); }
+    public String getContext() {
+        if (this.alertBox != null) {
+            return this.alertBox.getContentText();
+        }
+        return null;
+    }
 
     public String getText() {
-        return this.alertLabel.getText();
+        if (this.alertLabel != null) {
+            return this.alertLabel.getText();
+        }
+        return null;
     }
 }
