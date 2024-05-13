@@ -1,21 +1,191 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.ToggleSwitch?>
 
-
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.tubespbo.Controllers.MainPage.MainPageController">
+<HBox fx:id="parentContainer" alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="root" stylesheets="@../Styles/MainLightTheme.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.tubespbo.Controllers.MainPage.MainPageController">
    <children>
-      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="280.0" minHeight="-Infinity" minWidth="280.0" prefWidth="280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="sideBar" maxWidth="280.0" minWidth="280.0" prefWidth="280.0" styleClass="vbox-sidepane" HBox.hgrow="ALWAYS">
          <children>
-            <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="SideBar" textAlignment="CENTER" textFill="WHITE" VBox.vgrow="ALWAYS">
-               <font>
-                  <Font name="Inter SemiBold" size="32.0" />
-               </font>
-            </Label>
+            <VBox alignment="BOTTOM_CENTER" layoutX="100.0" layoutY="273.0" maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Button fx:id="logoutButton" focusTraversable="false" maxHeight="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" text="Log Out" textOverrun="CLIP">
+                     <styleClass>
+                        <String fx:value="button-sidepane" />
+                        <String fx:value="image-logout" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fx:id="imageLogout" fitHeight="20.0" fitWidth="20.0" styleClass="image-logout" />
+                     </graphic>
+                     <VBox.margin>
+                        <Insets bottom="24.0" left="12.0" right="12.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Line endX="100.0" fill="#ff000000" startX="-150.0" stroke="#ffffff00" styleClass="separator" />
+                  <Label maxWidth="1.7976931348623157E308" styleClass="label-sidepane-category" text="PREFERENCE">
+                     <VBox.margin>
+                        <Insets bottom="4.0" left="24.0" right="24.0" top="32.0" />
+                     </VBox.margin>
+                  </Label>
+                  <StackPane maxHeight="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" onMouseClicked="#changeTheme" prefHeight="40.0" styleClass="button-sidepane" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="32.0" left="12.0" right="12.0" top="2.0" />
+                     </VBox.margin>
+                     <children>
+                        <ToggleSwitch fx:id="themeToggleSwitch" alignment="CENTER_RIGHT" focusTraversable="false" graphicTextGap="0.0" prefWidth="0.0" styleClass="toggleswitch-sidepane-darkmode-on_off" textAlignment="CENTER" StackPane.alignment="CENTER_RIGHT">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </ToggleSwitch>
+                        <Label styleClass="label-sidepane-darkmode" text="Dark Mode" StackPane.alignment="CENTER_LEFT">
+                           <StackPane.margin>
+                              <Insets left="32.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <ImageView fx:id="imageDashboard1" fitHeight="20.0" fitWidth="20.0" styleClass="image-darkmode" />
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="280.0" minHeight="-Infinity" minWidth="280.0" prefWidth="280.0" styleClass="vbox-sidepane" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="200.0" styleClass="hbox-profilepane" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="32.0" left="24.0" right="24.0" top="32.0" />
+                     </VBox.margin>
+                     <children>
+                        <ImageView fitHeight="28.0" fitWidth="28.0" styleClass="image-status" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="9.0" left="14.0" top="9.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <VBox HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                           </HBox.margin>
+                           <children>
+                              <Label maxWidth="1.7976931348623157E308" styleClass="label-subbody-small" text="Status as" VBox.vgrow="ALWAYS" />
+                              <Label fx:id="roleLabel" maxWidth="1.7976931348623157E308" styleClass="label-subheading" text="Unknown" VBox.vgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Line endX="100.0" startX="-150.0" stroke="#ffffff00" styleClass="separator" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0" startY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color opacity="0.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.5121951219512195">
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" opacity="0.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Line>
+                  <Label maxWidth="1.7976931348623157E308" styleClass="label-sidepane-category" text="MENU">
+                     <VBox.margin>
+                        <Insets bottom="4.0" left="28.0" right="32.0" top="24.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Button fx:id="dashboardButton" focusTraversable="false" maxHeight="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" mnemonicParsing="false" onAction="#loadDashboardView" prefHeight="40.0" text="Dashboard">
+                     <VBox.margin>
+                        <Insets left="12.0" right="12.0" top="2.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="button-sidepane" />
+                        <String fx:value="button-sidepane-dashboard" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fx:id="imageDashboard" fitHeight="20.0" fitWidth="20.0" styleClass="image-dashboard" />
+                     </graphic>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006729475100942127">
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Button>
+                  <Button fx:id="interactiveMapButton" focusTraversable="false" maxHeight="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" mnemonicParsing="false" onAction="#loadInteractiveMapView" prefHeight="40.0" text="Interactive Map">
+                     <VBox.margin>
+                        <Insets left="12.0" right="12.0" top="2.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="button-sidepane" />
+                        <String fx:value="button-sidepane-interactivemap" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fx:id="imageInteractiveMap" fitHeight="20.0" fitWidth="20.0" styleClass="image-interactivemap" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="majorStudyProgramsButton" focusTraversable="false" maxHeight="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" mnemonicParsing="false" onAction="#loadMajorStudyProgramsView" prefHeight="40.0" text="Major &amp; Study Programs" textOverrun="CLIP">
+                     <VBox.margin>
+                        <Insets left="12.0" right="12.0" top="2.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="button-sidepane" />
+                        <String fx:value="button-sidepane-majorstudyprograms" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fx:id="imageMajorStudyPrograms" fitHeight="20.0" fitWidth="20.0" styleClass="image-majorstudyprograms" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="aboutButton" focusTraversable="false" maxHeight="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" mnemonicParsing="false" onAction="#loadAboutView" prefHeight="40.0" text="About">
+                     <VBox.margin>
+                        <Insets left="12.0" right="12.0" top="2.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="button-sidepane" />
+                        <String fx:value="button-sidepane-about" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fx:id="imageAbout" fitHeight="20.0" fitWidth="20.0" styleClass="image-about" />
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
          </children>
-      </VBox>
+      </AnchorPane>
    </children>
-</AnchorPane>
+</HBox>
