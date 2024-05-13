@@ -1,5 +1,6 @@
 package project.tubespbo.Controllers;
 
+import project.tubespbo.Controllers.MainPage.MainPageController;
 import project.tubespbo.Models.AlertModel;
 import project.tubespbo.Models.LoginModel;
 import javafx.collections.ObservableList;
@@ -23,7 +24,10 @@ public class LoginPageController {
     private boolean isLightMode = true;
     private AlertModel alertUsername = new AlertModel();
     private AlertModel alertPassword = new AlertModel();
+    private AlertModel alertBox = new AlertModel();
+    private static LoginModel session;
     private LoginModel loginModel = new LoginModel();
+
 
     @FXML
     private StackPane rootLoginPane, passwordContainer;
@@ -42,6 +46,18 @@ public class LoginPageController {
 
     @FXML
     private Button showPasswordButton, signInButton, guestButton;
+
+    public static LoginModel getSession() {
+
+        return session;
+
+    }
+
+    public static void setSession(LoginModel session) {
+
+        LoginPageController.session = session;
+
+    }
 
     public void switchScene() throws IOException {
 
@@ -127,14 +143,13 @@ public class LoginPageController {
 
         if (username.equals(loginModel.getUsername()) && password.equals(loginModel.getPassword())) {
 
-            loginModel.setRole("User");
+            loginModel.setRole("Civitas");
+            LoginPageController.session = loginModel;
 
             loginPane.getChildren().remove(alertUsername.getAlertLabel());
             loginPane.getChildren().remove(alertPassword.getAlertLabel());
 
             switchScene();
-
-            System.out.println("Login as a : " + loginModel.getRole());
 
         }
 
@@ -143,8 +158,17 @@ public class LoginPageController {
     @FXML
     private void loginAsGuest() throws IOException {
 
-        loginModel.setRole("Guest");
-        switchScene();
+        alertBox.setAlertBox(Alert.AlertType.CONFIRMATION, "Log In Confirmation", "Are you sure want to log in as a Guest?", "");
+        alertBox.getAlertBox().showAndWait();
+
+        if (alertBox.getAlertBox().getResult() == ButtonType.OK) {
+
+            loginModel.setRole("Guest");
+            LoginPageController.session = loginModel;
+
+            switchScene();
+
+        }
 
     }
 
