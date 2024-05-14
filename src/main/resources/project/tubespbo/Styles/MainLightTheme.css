@@ -1,0 +1,339 @@
+.root {
+
+    /* variables */
+
+    /* GRAY */
+
+    gray-25: #FCFCFD;
+    gray-50: #F9FAFB;
+    gray-100: #F2F4F7;
+    gray-200: #EAECF0;
+    gray-300: #D0D5DD;
+    gray-400: #98A2B3;
+    gray-500: #667085;
+    gray-600: #475467;
+    gray-700: #344054;
+    gray-800: #182230;
+    gray-900: #101828;
+    gray-950: #0C111D;
+
+    /* BLUE */
+
+    blue-50: #EBEEFD;
+    blue-100: #BFCCF8;
+    blue-200: #A1B3F4;
+    blue-300: #7690F0;
+    blue-400: #5B7AED;
+    blue-500: #3259E8;
+    blue-600: #2E51D3;
+    blue-700: #243FA5;
+    blue-800: #1C3180;
+    blue-900: #152561;
+
+    /* images */
+
+    profile: url("../Assets/Icons/User.png");
+    dashboard: url("../Assets/Icons/Dashboard.png");
+    interactivemap : url("../Assets/Icons/InteractiveMap.png");
+    majorstudyprograms: url("../Assets/Icons/MajorStudyPrograms.png");
+    about: url("../Assets/Icons/About.png");
+    darkmode: url("../Assets/Icons/DarkMode2.png");
+    logout: url("../Assets/Icons/Logout.png");
+
+    dashboard-focused: url("../Assets/Icons/DashboardFocused.png");
+    interactivemap-focused: url("../Assets/Icons/InteractiveMapFocused.png");
+    majorstudyprograms-focused: url("../Assets/Icons/MajorStudyProgramsFocused.png");
+    about-focused: url("../Assets/Icons/AboutFocused.png");
+
+    -fx-background-color: gray-100;
+}
+
+.anchorpane-mainpane {
+
+    -fx-background-color: white;
+    -fx-background-radius: 14;
+    -fx-border-color: gray-200;
+    -fx-border-width: 1;
+    -fx-border-radius: 14;
+
+}
+
+.vbox-sidepane {
+
+    -fx-background-color: gray-100;
+
+}
+
+.hbox-profilepane {
+
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, white, gray-100);
+    -fx-background-radius: 10;
+    -fx-border-color: linear-gradient(from 0% 0% to 0% 100%, gray-200, gray-300);
+    -fx-effect: dropshadow(gaussian, #0000000a, 20, 0, 0, 10);
+    -fx-border-radius: 10;
+    
+}
+
+/* -Image Buttons- */
+
+.image-status {
+    
+    -fx-image: profile;
+    
+}
+
+.image-dashboard {
+    
+    -fx-image: dashboard;
+
+}
+
+.image-interactivemap {
+
+    -fx-image: interactivemap;
+
+}
+
+.image-majorstudyprograms {
+
+    -fx-image: majorstudyprograms;
+
+}
+
+.image-about {
+
+    -fx-image: about;
+
+}
+
+.image-logout {
+
+    -fx-image: logout;
+
+}
+
+.image-darkmode {
+
+     -fx-image: darkmode;
+
+ }
+
+/* -Focused Image Buttons- */
+
+.image-dashboard-focused {
+
+    -fx-image: dashboard-focused;
+
+}
+
+.image-interactivemap-focused {
+
+    -fx-image: interactivemap-focused;
+
+}
+
+.image-majorstudyprograms-focused {
+
+    -fx-image: majorstudyprograms-focused;
+
+}
+
+.image-about-focused {
+
+    -fx-image: about-focused;
+
+}
+
+/* sidepane */
+
+.separator {
+
+    -fx-stroke: linear-gradient(from 0.0% 100.0% to 100.0% 100.0%, #00000000 0.0%, gray-400 50%, #ffffff00 100.0%);
+
+}
+
+.button-sidepane {
+
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+    -fx-padding: 8 16 8 16;
+    -fx-text-fill: gray-600;
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 14;
+    -fx-alignment: center-left;
+    -fx-graphic-text-gap: 12px;
+    -fx-cursor: hand;
+
+}
+
+.button-sidepane:hover {
+
+    -fx-background-color: gray-200;
+    -fx-text-fill: gray-700;
+    -fx-border-style: solid outside;
+    -fx-border-width: 1px;
+    -fx-border-color: gray-300;
+    -fx-border-radius: 8;
+
+
+}
+
+.button-sidepane:focused {
+
+    -fx-background-color: linear-gradient(from 0% 100% to 0% 0%, gray-700, gray-800);
+    -fx-text-fill: gray-100;
+    -fx-effect: dropshadow(gaussian, #0000000d, 10, 0, 0, 3);
+    -fx-border-style: solid inside;
+    -fx-border-width: 1px;
+    -fx-border-color: gray-100;
+    -fx-border-radius: 8;
+
+}
+
+.label-sidepane-category {
+
+    -fx-text-fill: gray-400;
+    -fx-font-family: "Inter";
+    -fx-font-weight: bold;
+    -fx-font-size: 12;
+    -fx-alignment: center-left;
+
+}
+
+.toggleswitch-sidepane-darkmode-on_off {
+
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, white, gray-100);
+    -fx-background-radius: 20;
+    -fx-border-color: linear-gradient(from 0% 0% to 0% 100%, gray-200, gray-300);
+    -fx-border-radius: 20;
+    -fx-cursor: hand;
+
+}
+
+.label-sidepane-darkmode {
+
+    -fx-text-fill: gray-600;
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 14;
+    -fx-alignment: center-left;
+    -fx-graphic-text-gap: 12px;
+    -fx-cursor: hand;
+
+}
+
+.label-sidepane-darkmode:hover {
+
+    -fx-text-fill: gray-700;
+
+
+}
+
+
+
+/*-- Dashboard page --*/
+/* -VBox- */
+
+
+.vbox-dashboard-container-1 {
+
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, white, gray-100);
+    -fx-background-radius: 20;
+    -fx-border-color: linear-gradient(from 0% 0% to 0% 100%, gray-200, gray-300);
+    -fx-effect: dropshadow(gaussian, #0000001a, 30, 0, 0, 10);
+    -fx-border-radius: 20;
+
+}
+
+/* -Labels- */
+.label-display {
+
+    -fx-text-fill: gray-900;
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 30;
+    -fx-alignment: center-left;
+
+}
+
+.label-heading {
+
+    -fx-text-fill: gray-900;
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 18;
+    -fx-alignment: center-left;
+
+}
+
+.label-subheading {
+
+    -fx-text-fill: gray-900;
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 16;
+    -fx-alignment: center-left;
+
+}
+
+.label-body {
+
+    -fx-text-fill: gray-900;
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 14;
+    -fx-alignment: center-left;
+
+}
+
+.label-subbody-large {
+
+    -fx-text-fill: gray-600;
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 12;
+    -fx-alignment: center-left;
+
+}
+
+.label-subbody-medium {
+
+    -fx-text-fill: gray-600;
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 10;
+    -fx-alignment: center-left;
+
+}
+
+.label-subbody-small {
+
+    -fx-text-fill: gray-600;
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 8;
+    -fx-alignment: center-left;
+
+}
+
+.label-total {
+
+    -fx-text-fill: gray-900;
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 36;
+    -fx-alignment: center-left;
+
+}
+
+/* -Buttons- */
+
+.button-check {
+
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, gray-900, black);
+    -fx-background-radius: 30;
+    -fx-border-width: 0;
+    -fx-padding: 6 5 6 16;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+
+}
+
+.button-check:hover {
+
+    -fx-background-color: gray-800;
+    -fx-text-fill: gray-200;
+
+}
+
