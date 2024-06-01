@@ -67,7 +67,49 @@ public class SideBarController implements Initializable {
 
         loadInteractiveMap();
 
+        if (LoginController.getSession() != null) {
+            roleLabel.setText(LoginController.getSession().getRole());
+            roleLabel.setStyle(getRoleStyle(LoginController.getSession().getRole()));
+        }
 
+    }
+
+    private String getRoleStyle(String role) {
+        switch (role) {
+            case "Civitas":
+                return "-fx-text-fill: linear-gradient(from 0% 0% to 100% 0%, #f4d941, #ec8235)";
+            case "Guest":
+                return "-fx-text-fill: linear-gradient(from 0% 0% to 100% 0%, #101828, #344054)";
+            default:
+                return "";
+        }
+    }
+
+    private void selectedButtonStyles(Button button) {
+        button.setStyle("-fx-background-color: linear-gradient(from 0% 100% to 0% 0%, gray-700, gray-800);" +
+                "-fx-text-fill: gray-100;" +
+                "-fx-effect: dropshadow(gaussian, #0000004d, 12, 0, 0, 3);" +
+                "-fx-border-style: solid inside;" +
+                "-fx-border-width: 1px;" +
+                "-fx-border-color: gray-100;" +
+                "-fx-border-radius: 8;");
+    }
+
+    private void resetButtonToDefaultStyle(Button button) {
+        button.setStyle(null);
+    }
+
+    private void resetButtonStyles() {
+        List<ImageView> images = List.of(dashboardImage, interactiveMapImage, majorStudyProgramsImage);
+        List<String> classes = List.of("image-dashboard", "image-interactivemap", "image-majorstudyprograms");
+
+        for (int i = 0; i < images.size(); i++) {
+            images.get(i).getStyleClass().clear();
+            images.get(i).getStyleClass().add(classes.get(i));
+        }
+
+        List<Button> buttons = List.of(dashboardButton, interactiveMapButton, majorStudyProgramsButton);
+        buttons.forEach(this::resetButtonToDefaultStyle);
     }
 
     @FXML
@@ -93,23 +135,31 @@ public class SideBarController implements Initializable {
     @FXML
     private void loadDashboard() {
 
+        resetButtonStyles();
+        selectedButtonStyles(dashboardButton);
+        dashboardImage.getStyleClass().add("image-dashboard-focused");
+        dashboardButton.requestFocus();
         changePage("DashboardView");
 
     }
 
     @FXML
-    private void loadInteractiveMap() {
-
+    public void loadInteractiveMap() {
+        resetButtonStyles();
+        selectedButtonStyles(interactiveMapButton);
+        interactiveMapImage.getStyleClass().add("image-interactivemap-focused");
+        interactiveMapButton.requestFocus();
         changePage("InteractiveMapView");
-
     }
 
     @FXML
-    private void loadMajorStudyPrograms() {
-
+    public void loadMajorStudyPrograms() {
+        resetButtonStyles();
+        selectedButtonStyles(majorStudyProgramsButton);
+        majorStudyProgramsImage.getStyleClass().add("image-majorstudyprograms-focused");
+        majorStudyProgramsButton.requestFocus();
         changePage("MajorStudyProgramsView");
-
-     }
+    }
 
     @FXML
     private void logout() throws IOException {
