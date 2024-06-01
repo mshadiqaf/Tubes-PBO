@@ -15,7 +15,7 @@ public class InformasiSeputarITK extends Application {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Views/LandingView.fxml")));
 
         Scene scene = new Scene(root, 800, 600);
-        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("Styles/LandingPage.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("Styles/Landing.css")).toExternalForm());
 
         stage.setTitle("ISI | Maps Interaktif");
         stage.setScene(scene);

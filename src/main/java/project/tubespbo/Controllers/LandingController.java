@@ -16,7 +16,7 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 
-public class LandingPageController {
+public class LandingController {
 
     @FXML
     private StackPane rootPane;
