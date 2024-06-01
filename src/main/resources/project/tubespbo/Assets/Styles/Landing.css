@@ -14,7 +14,7 @@
 }
 
 .button-start {
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0.0, 3);
+    -fx-effect: dropshadow(gaussian, #0000002d, 16, 0, 0, 8);
     -fx-background-color: linear-gradient(to bottom, #3d7fff, #4b5dff);
     -fx-background-radius: 25;
     -fx-background-insets: 0,1,2;
@@ -28,6 +28,7 @@
 .button-start:hover {
     -fx-background-color: linear-gradient(to bottom, #1F69FF, #3347FF);
     -fx-border-color: #224bd3;
+    -fx-effect: dropshadow(gaussian, #0000004d, 32, 0, 0, 12);
 }
 
 .button-start:pressed {

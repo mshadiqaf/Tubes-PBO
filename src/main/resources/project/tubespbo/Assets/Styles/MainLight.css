@@ -158,9 +158,9 @@
 
 .image-darkmode {
 
-    -fx-image: darkmode;
+     -fx-image: darkmode;
 
-}
+ }
 
 /* -Focused Image SideBar Buttons- */
 
@@ -764,7 +764,7 @@
     -fx-background-color: linear-gradient(from 50% 0% to 100% 0%, gray-300, gray-400);
     -fx-border-color: transparent;
     -fx-effect: dropshadow(gaussian, #0000002a, 16, 0, 0, 0);
-
+    
 }
 
 .slider-zoom .track:pressed {

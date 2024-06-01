@@ -72,7 +72,8 @@
 }
 
 .field-username:focused {
-     -fx-border-color: #3259E8;
+    -fx-effect: dropshadow(gaussian, #3259E82a, 24, 0, 0, 4);
+    -fx-border-color: #3259E8;
 }
 
 .field-password {
@@ -91,6 +92,7 @@
 }
 
 .field-password:focused {
+    -fx-effect: dropshadow(gaussian, #3259E82a, 24, 0, 0, 4);
      -fx-border-color: #3259E8;
 }
 
