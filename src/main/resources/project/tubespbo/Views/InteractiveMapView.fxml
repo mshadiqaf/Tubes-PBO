@@ -29,7 +29,7 @@
                   <Insets bottom="32.0" left="32.0" right="32.0" top="32.0" />
                </VBox.margin>
                <children>
-                  <StackPane fx:id="mapPane" prefHeight="150.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <StackPane fx:id="mapPane" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <AnchorPane fx:id="map" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="345.0" prefWidth="605.0" styleClass="anchorpane-interactivemap-container-1" StackPane.alignment="CENTER">
                            <StackPane.margin>
@@ -82,7 +82,7 @@
                         </VBox>
                      </children>
                   </StackPane>
-                  <AnchorPane fx:id="informationPane" layoutX="0.800000011920929" layoutY="0.800000011920929" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="informationPane" layoutX="0.800000011920929" layoutY="0.800000011920929" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <AnchorPane fx:id="imageContainer" prefHeight="0.0" styleClass="anchorpane-interactivemap-image" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                         <AnchorPane prefHeight="0.0" prefWidth="460.0" styleClass="anchorpane-interactivemap-blackfade" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
@@ -107,8 +107,8 @@
                         </VBox>
                      </children>
                   </AnchorPane>
-                  <Label fx:id="headingLabel" styleClass="label-heading" text="Campus Plan" visible="false" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="24.0" />
-                  <Button fx:id="backButton" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#hideBuildingInformation" styleClass="button-interactivemap-back" text="Back" textAlignment="CENTER" textFill="#b42318" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="24.0">
+                  <Label fx:id="headingLabel" styleClass="label-heading" text="Campus Plan" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="24.0" />
+                  <Button fx:id="backButton" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#hideBuildingInformation" styleClass="button-interactivemap-back" text="Back" textAlignment="CENTER" textFill="#b42318" visible="false" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="24.0">
                      <font>
                         <Font name="Inter Medium" size="12.0" />
                      </font>

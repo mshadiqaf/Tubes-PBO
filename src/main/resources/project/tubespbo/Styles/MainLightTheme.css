@@ -1,5 +1,7 @@
 .root {
 
+    -fx-background-color: gray-100;
+
     /* variables */
 
     /* GRAY */
@@ -32,20 +34,20 @@
 
     /* images */
 
+    zoomin: url("../Assets/Icons/ZoomIn.png");
+    zoomout: url("../Assets/Icons/ZoomOut.png");
     profile: url("../Assets/Icons/User.png");
     dashboard: url("../Assets/Icons/Dashboard.png");
     interactivemap : url("../Assets/Icons/InteractiveMap.png");
     majorstudyprograms: url("../Assets/Icons/MajorStudyPrograms.png");
-    about: url("../Assets/Icons/About.png");
     darkmode: url("../Assets/Icons/DarkMode2.png");
     logout: url("../Assets/Icons/Logout.png");
 
-    dashboard-focused: url("../Assets/Icons/DashboardFocused.png");
-    interactivemap-focused: url("../Assets/Icons/InteractiveMapFocused.png");
-    majorstudyprograms-focused: url("../Assets/Icons/MajorStudyProgramsFocused.png");
-    about-focused: url("../Assets/Icons/AboutFocused.png");
+    dashboard-focused: url("../Assets/Icons/DashboardSelectedLight.png");
+    interactivemap-focused: url("../Assets/Icons/InteractiveMapSelectedLight.png");
+    majorstudyprograms-focused: url("../Assets/Icons/MajorStudyProgramsSelectedLight.png");
 
-    -fx-background-color: gray-100;
+    /* jurusan */
 
     /* JMTI */
 
@@ -119,19 +121,19 @@
     -fx-border-color: linear-gradient(from 0% 0% to 0% 100%, gray-200, gray-300);
     -fx-effect: dropshadow(gaussian, #0000000a, 20, 0, 0, 10);
     -fx-border-radius: 10;
-    
+
 }
 
-/* -Image Buttons- */
+/* -Image SideBar Buttons- */
 
 .image-status {
-    
+
     -fx-image: profile;
-    
+
 }
 
 .image-dashboard {
-    
+
     -fx-image: dashboard;
 
 }
@@ -148,12 +150,6 @@
 
 }
 
-.image-about {
-
-    -fx-image: about;
-
-}
-
 .image-logout {
 
     -fx-image: logout;
@@ -162,11 +158,11 @@
 
 .image-darkmode {
 
-     -fx-image: darkmode;
+    -fx-image: darkmode;
 
- }
+}
 
-/* -Focused Image Buttons- */
+/* -Focused Image SideBar Buttons- */
 
 .image-dashboard-focused {
 
@@ -192,7 +188,7 @@
 
 }
 
-/* sidepane */
+/* sidebar */
 
 .separator {
 
@@ -223,19 +219,6 @@
     -fx-border-color: gray-300;
     -fx-border-radius: 8;
 
-
-}
-
-.button-sidepane:focused {
-
-    -fx-background-color: linear-gradient(from 0% 100% to 0% 0%, gray-700, gray-800);
-    -fx-text-fill: gray-100;
-    -fx-effect: dropshadow(gaussian, #0000000d, 10, 0, 0, 3);
-    -fx-border-style: solid inside;
-    -fx-border-width: 1px;
-    -fx-border-color: gray-100;
-    -fx-border-radius: 8;
-
 }
 
 .label-sidepane-category {
@@ -244,16 +227,25 @@
     -fx-font-family: "Inter";
     -fx-font-weight: bold;
     -fx-font-size: 12;
-    -fx-alignment: center-left;
+
+}
+
+.label-sidepane-credit {
+
+    -fx-text-fill: gray-500;
+    -fx-font-family: "Inter";
+    -fx-font-weight: bold;
+    -fx-font-size: 12;
+    -fx-effect: dropshadow(gaussian, #0000005a, 24, 0, 0, 0);
 
 }
 
 .toggleswitch-sidepane-darkmode-on_off {
 
     -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, white, gray-100);
-    -fx-background-radius: 20;
+    -fx-background-radius: 24;
     -fx-border-color: linear-gradient(from 0% 0% to 0% 100%, gray-200, gray-300);
-    -fx-border-radius: 20;
+    -fx-border-radius: 24;
     -fx-cursor: hand;
 
 }
@@ -279,26 +271,169 @@
 
 
 /*-- Dashboard page --*/
+/* -AnchorPane- */
+
+.anchorpane-dashboard-container-1 {
+
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, white, gray-100);
+    -fx-background-radius: 24;
+    -fx-border-color: linear-gradient(from 0% 0% to 0% 100%, gray-200, gray-300);
+    -fx-effect: dropshadow(gaussian, #0000002a, 24, 0, 0, 10);
+    -fx-border-radius: 24;
+}
+
+.anchorpane-dashboard-image {
+
+    -fx-background-radius: 24;
+    -fx-background-image: url("../Assets/Backgrounds/GambarITK.png");
+    -fx-background-size: 120%;
+    -fx-background-position: 0% 80%;
+
+}
+
+/* -ScrollPane- */
+.scrollpane-dashboard-root {
+
+    -fx-background-color: white;
+    -fx-background-radius: 24;
+    -fx-border-insets: 1 1 1 1;
+
+}
+
+.scrollpane-dashboard-root .scroll-bar:vertical {
+
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-padding: 24 12 24 0;
+
+}
+
+.scrollpane-dashboard-root .scroll-bar:vertical .track {
+
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent;
+    -fx-border-radius: 2;
+
+}
+
+.scrollpane-dashboard-root .scroll-bar:vertical .decrement-button,
+.scrollpane-dashboard-root .scroll-bar:vertical .increment-button {
+
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-padding: 0 12 0 0;
+
+}
+
+.scrollpane-dashboard-root .scroll-bar .increment-arrow,
+.scrollpane-dashboard-root .scroll-bar .decrement-arrow {
+
+    -fx-padding: -2;
+
+}
+
+.scrollpane-dashboard-root .scroll-bar:vertical .thumb {
+
+    -fx-background-color: gray-700;
+
+}
+
+.scrollpane-dashboard-root .scroll-bar:vertical .thumb:hover {
+
+    -fx-background-color: gray-600;
+
+}
+
 /* -VBox- */
 
 
 .vbox-dashboard-container-1 {
 
     -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, white, gray-100);
-    -fx-background-radius: 20;
+    -fx-background-radius: 16;
     -fx-border-color: linear-gradient(from 0% 0% to 0% 100%, gray-200, gray-300);
     -fx-effect: dropshadow(gaussian, #0000001a, 30, 0, 0, 10);
-    -fx-border-radius: 20;
+    -fx-border-radius: 16;
+}
+
+.vbox-dashboard-container-2 {
+
+    -fx-background-color: linear-gradient(from 0.0% 100.0% to 100.0% 100.0%, #000000 0.0%, #00000000 75.0%);
+    -fx-background-radius: 16;
+
+}
+
+.vbox-dashboard-container-3 {
+
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, white, gray-100);
+    -fx-background-radius: 16;
+    -fx-border-color: linear-gradient(from 0% 0% to 0% 100%, gray-200, gray-300);
+    -fx-effect: dropshadow(gaussian, #0000001a, 30, 0, 0, 10);
+    -fx-border-radius: 16;
+}
+
+/* -HBox- */
+
+.hbox-dashboard-head {
+
+    -fx-background-color: gray-50;
+    -fx-effect: dropshadow(gaussian, gray-50, 32, 0.7, 0, 4);
+
+}
+
+/* -ImageView- */
+
+.imageview-logo-km {
+
+    -fx-effect: dropshadow(gaussian, #06791782, 24, 0, 0, 8);
 
 }
 
 /* -Labels- */
+
+.label-custom-1 {
+
+    -fx-text-fill: white;
+    -fx-font-family: "Inter ExtraBold";
+    -fx-font-size: 20;
+    -fx-effect: dropshadow(gaussian, #0000008a, 12, 0, 0, 0);
+
+}
+
+.label-custom-2 {
+
+    -fx-text-fill: gray-300;
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 14;
+    -fx-effect: dropshadow(gaussian, #0000008a, 12, 0, 0, 0);
+
+}
+
+.label-custom-3 {
+
+    -fx-text-fill: linear-gradient(from 0% 0% to 0% 100%, white, gray-400);
+    -fx-font-family: "Inter";
+    -fx-font-weight: bold;
+    -fx-font-size: 48;
+    -fx-effect: dropshadow(gaussian, #0000004a, 16, 0, 0, 0);
+
+}
+
+.label-custom-4 {
+
+    -fx-text-fill: gray-300;
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 14;
+    -fx-effect: dropshadow(gaussian, #0000004a, 16, 0, 0, 0);
+
+}
+
 .label-display {
 
     -fx-text-fill: gray-900;
     -fx-font-family: "Inter SemiBold";
     -fx-font-size: 30;
-    -fx-alignment: center-left;
 
 }
 
@@ -307,7 +442,6 @@
     -fx-text-fill: gray-900;
     -fx-font-family: "Inter SemiBold";
     -fx-font-size: 18;
-    -fx-alignment: center-left;
 
 }
 
@@ -316,7 +450,6 @@
     -fx-text-fill: gray-900;
     -fx-font-family: "Inter SemiBold";
     -fx-font-size: 16;
-    -fx-alignment: center-left;
 
 }
 
@@ -325,7 +458,6 @@
     -fx-text-fill: gray-900;
     -fx-font-family: "Inter SemiBold";
     -fx-font-size: 14;
-    -fx-alignment: center-left;
 
 }
 
@@ -334,7 +466,6 @@
     -fx-text-fill: gray-600;
     -fx-font-family: "Inter SemiBold";
     -fx-font-size: 12;
-    -fx-alignment: center-left;
 
 }
 
@@ -343,7 +474,6 @@
     -fx-text-fill: gray-600;
     -fx-font-family: "Inter SemiBold";
     -fx-font-size: 10;
-    -fx-alignment: center-left;
 
 }
 
@@ -352,24 +482,53 @@
     -fx-text-fill: gray-600;
     -fx-font-family: "Inter SemiBold";
     -fx-font-size: 8;
-    -fx-alignment: center-left;
 
 }
 
 .label-total {
 
     -fx-text-fill: gray-900;
-    -fx-font-family: "Inter SemiBold";
-    -fx-font-size: 36;
-    -fx-alignment: center-left;
+    -fx-font-family: "Inter";
+    -fx-font-weight: bold;
+    -fx-font-size: 32;
+
+}
+
+.label-total-2 {
+
+    -fx-text-fill: gray-900;
+    -fx-font-family: "Inter";
+    -fx-font-weight: bold;
+    -fx-font-size: 22;
 
 }
 
 /* -Buttons- */
 
+.button-tryit {
+
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, gray-25, white);
+    -fx-background-radius: 30;
+    -fx-effect: dropshadow(gaussian, #ffffff3a, 12, 0, 0, 5);
+    -fx-border-width: 0;
+    -fx-padding: 6 5 6 16;
+    -fx-text-fill: black;
+    -fx-cursor: hand;
+
+}
+
+.button-tryit:hover {
+
+    -fx-background-color: gray-200;
+    -fx-text-fill: gray-800;
+    -fx-effect: dropshadow(gaussian, #ffffff5a, 24, 0, 0, 5);
+
+}
+
 .button-check {
 
     -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, gray-900, black);
+    -fx-effect: dropshadow(gaussian, #0000003a, 12, 0, 0, 5);
     -fx-background-radius: 30;
     -fx-border-width: 0;
     -fx-padding: 6 5 6 16;
@@ -382,8 +541,395 @@
 
     -fx-background-color: gray-800;
     -fx-text-fill: gray-200;
+    -fx-effect: dropshadow(gaussian, #0000005a, 24, 0, 0, 5);
 
 }
+
+/* Charts */
+
+.default-color0.chart-pie { -fx-pie-color: #067ff3; }
+.default-color1.chart-pie { -fx-pie-color: #b697f8; }
+.default-color2.chart-pie { -fx-pie-color: #ef5948; }
+.default-color3.chart-pie { -fx-pie-color: #f7cd1b; }
+.default-color4.chart-pie { -fx-pie-color: #07b682; }
+
+.chart-pie-label-line {
+    -fx-stroke: black;
+    -fx-fill: gray-200;
+}
+
+.chart-pie-label {
+    -fx-fill: gray-700;
+    -fx-font-size: 10;
+    -fx-font-family: "Inter SemiBold";
+}
+.chart-legend {
+    -fx-background-color: gray-100;
+    -fx-stroke: gray-200;
+    -fx-font-size: 8;
+    -fx-font-family: "Inter Medium";
+}
+
+.chart {
+
+    -fx-effect: dropshadow(gaussian, #0000001a, 30, 0, 0, 10);
+    -fx-background-color: transparent;
+
+}
+
+.chart-content {
+
+    -fx-padding: 10px;
+
+}
+
+.chart-legend-item{
+
+    -fx-text-fill: #191970;
+
+}
+
+.chart-plot-background {
+
+    -fx-background-color: transparent;
+
+}
+
+.chart-horizontal-grid-lines {
+
+    -fx-stroke: gray-500;
+    -fx-stroke-dash-array: 0 0 0 0;
+    -fx-stroke-dash-offset: 6;
+    -fx-stroke-line-cap: butt;
+
+}
+
+.chart-alternative-row-fill {
+
+    -fx-fill: transparent;
+    -fx-stroke: transparent;
+    -fx-stroke-width: 0;
+
+}
+
+/* --Interactive Map page-- */
+
+/* -AnchorPane- */
+
+.anchorpane-interactivemap-root {
+
+    -fx-background-color: radial-gradient(focus-angle 0.0deg, focus-distance 0.0% , center 50.0% 50.0%, radius 50.0%, white 40%, #c9d8e2 60%, #b5c4ce 80%, #a1b0ba 100%);
+    -fx-background-radius: 24;
+    -fx-background-size: cover;
+    -fx-border-color: linear-gradient(from 0% 0% to 0% 100%, #c9d8e2, #b5c4ce);
+    -fx-border-radius: 24;
+    -fx-effect: dropshadow(gaussian, #0000002a, 32, 0, 0, 0);
+
+}
+
+.anchorpane-map {
+
+    -fx-background-image: url("../Assets/Backgrounds/MapITK.png");
+    -fx-background-size: cover;
+    -fx-cursor: crosshair;
+
+}
+
+.anchorpane-interactivemap-container-1 {
+
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, white, gray-100);
+    -fx-background-radius: 32;
+    -fx-effect: dropshadow(gaussian, #0000002a, 32, 0, 0, 0);
+
+}
+
+.anchorpane-interactivemap-blackfade {
+
+    -fx-background-color: linear-gradient(from 0% 100% to 0% 0%, #000000 0.0%, #00000000 75.0%);
+    -fx-background-radius: 24;
+
+}
+
+.anchorpane-interactivemap-image {
+
+    -fx-background-image: url("../Assets/Backgrounds/GambarITK.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
+/* -ImageView- */
+
+.image-zoomin {
+
+    -fx-image: zoomin;
+    -fx-effect: dropshadow(gaussian, #0000002a, 12, 0, 0, 0);
+
+}
+
+.image-zoomout {
+
+    -fx-image: zoomout;
+    -fx-effect: dropshadow(gaussian, #0000002a, 12, 0, 0, 0);
+
+}
+
+
+/* -Buttons- */
+
+.custom-button {
+
+    -fx-shape: "M 200 300 L 200 500 L 650 500 L 650 300 L 600 300 L 600 250 L 650 250 L 650 50 L 200 50 L 200 250 L 250 250 L 250 300 L 200 300 Z";
+    -fx-cursor: hand;
+    -fx-text-fill: transparent;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.custom-button:hover {
+
+    -fx-border-color: #0000009a;
+    -fx-border-width: 2;
+    -fx-background-color: #0000001a;
+
+}
+
+.custom-button-2 {
+
+    -fx-shape: "M 100 50 L 250 50 L 250 100 L 300 100 L 300 50 L 450 50 L 450 475 L 425 475 L 425 525 L 325 525 L 325 550 L 225 550 L 225 588 L 95 590 L 95 445 L 100 445 Z";
+    -fx-cursor: hand;
+    -fx-text-fill: transparent;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.custom-button-2:hover {
+
+    -fx-border-color: #0000009a;
+    -fx-border-width: 2;
+    -fx-background-color: #0000001a;
+
+}
+
+.custom-button-3 {
+
+    -fx-shape: "M 110 510 L 110 220 L 135 220 L 135 180 L 165 180 L 165 150 L 240 150 L 240 45 L 405 45 L 405 230 L 430 230 L 430 330 L 370 330 L 370 540 L 350 540 L 350 590 L 270 590 L 270 555 L 195 555 L 195 510 L 110 510";
+    -fx-cursor: hand;
+    -fx-text-fill: transparent;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.custom-button-3:hover {
+
+    -fx-border-color: #0000009a;
+    -fx-border-width: 2;
+    -fx-background-color: #0000001a;
+
+}
+
+.button-interactivemap-back {
+
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, white, gray-300);
+    -fx-background-radius: 24;
+    -fx-border-color: linear-gradient(from 0% 0% to 0% 100%, gray-300, gray-400);
+    -fx-border-radius: 24;
+    -fx-padding: 4 12 4 4;
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 18;
+    -fx-text-fill: gray-700;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #0000009a, 12, 0, 0, 2);
+    -fx-graphic: url("../Assets/Icons/Back.png");
+
+}
+
+.button-interactivemap-back:hover {
+
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, gray-200, gray-400);
+    -fx-border-color: linear-gradient(from 0% 0% to 0% 100%, gray-500, gray-600);
+    -fx-effect: dropshadow(gaussian, #0000009a, 24, 0, 0, 4);
+    -fx-text-fill: gray-800;
+
+}
+
+/* -Slider- */
+
+.slider-zoom {
+
+
+}
+
+.slider-zoom .track {
+
+    -fx-background-color: linear-gradient(from 50% 0% to 100% 0%, gray-300, gray-400);
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, #0000002a, 16, 0, 0, 0);
+
+}
+
+.slider-zoom .track:pressed {
+
+    -fx-cursor: h_resize;
+
+}
+
+.slider-zoom .thumb {
+
+    -fx-background-color: gray-600;
+    -fx-border-color: gray-500;
+    -fx-border-radius: 20;
+    -fx-cursor: hand;
+
+}
+
+.slider-zoom .thumb:hover {
+
+    -fx-background-color: gray-700;
+    -fx-border-color: gray-600;
+
+}
+
+.slider-zoom .thumb:pressed {
+
+    -fx-cursor: h_resize;
+    -fx-effect: dropshadow(gaussian, #0000004a, 32, 0, 0, 0);
+
+}
+
+/* -Labels- */
+
+.label-gedung {
+
+    -fx-font-family: "Inter";
+    -fx-font-size: 24;
+    -fx-text-fill: #2E51D3;
+    -fx-effect: dropshadow(gaussian, #2E51D3, 12, 0, 0, 0);
+
+}
+
+/* --Major & Study Programs page-- */
+
+/* -AnchorPane- */
+
+/* -ScrollPanePane- */
+
+.scrollpane-majorstudyprograms-root {
+
+    -fx-background-color: gray-50;
+    -fx-background-radius: 24;
+    -fx-border-color: gray-200;
+    -fx-border-radius: 24;
+    -fx-padding: 0 12 0 24;
+    -fx-border-insets: 1 1 1 1;
+
+}
+
+.scrollpane-majorstudyprograms-root .scroll-bar:vertical {
+
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-padding: 12 8 12 0;
+
+}
+
+.scrollpane-majorstudyprograms-root .scroll-bar:vertical .track {
+
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent;
+    -fx-border-radius: 2em;
+
+}
+
+.scrollpane-majorstudyprograms-root .scroll-bar:vertical .decrement-button,
+.scrollpane-majorstudyprograms-root .scroll-bar:vertical .increment-button {
+
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-padding: 0 12 0 0;
+
+}
+
+.scrollpane-majorstudyprograms-root .scroll-bar .increment-arrow,
+.scrollpane-majorstudyprograms-root .scroll-bar .decrement-arrow {
+
+    -fx-padding: -2;
+
+}
+
+.scrollpane-majorstudyprograms-root .scroll-bar:vertical .thumb {
+
+    -fx-background-color: gray-700;
+
+}
+
+.scrollpane-majorstudyprograms-root .scroll-bar:vertical .thumb:hover {
+
+    -fx-background-color: gray-600;
+
+}
+
+/* -VBox- */
+
+.vbox-majorstudyprograms-container-1 {
+
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, white, gray-100);
+    -fx-background-radius: 24;
+    -fx-border-color: linear-gradient(from 0% 0% to 0% 100%, gray-200, gray-300);
+    -fx-effect: dropshadow(gaussian, #0000001a, 24, 0, 0, 12);
+    -fx-border-radius: 24;
+
+}
+
+.vbox-majorstudyprograms-container-2 {
+
+    -fx-background-color: linear-gradient(from 0% 60% to 0% 100%, gray-50, gray-300);
+    -fx-background-radius: 12;
+    -fx-border-color: linear-gradient(from 0% 0% to 0% 100%, gray-200, gray-300);
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, #0000001a, 16, 0, 0, 12);
+    -fx-padding: 12 6 12 6;
+    -fx-cursor: hand;
+    -fx-text-fill: gray-700;
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 12;
+
+}
+
+.vbox-majorstudyprograms-container-2:hover {
+
+    -fx-border-color: gray-500;
+    -fx-effect: dropshadow(gaussian, #0000003a, 24, 0, 0, 16);
+
+}
+
+/* -HBox- */
+
+.hbox-majorstudyprograms-head {
+
+    -fx-background-color: gray-50;
+    -fx-effect: dropshadow(gaussian, gray-50, 42, 0.5, -10, 10);
+
+}
+
+/* -ImageView- */
+
+.imageview-logo-jurusan {
+
+    -fx-effect: dropshadow(gaussian, #0000007a, 24, 0, 0, 8);
+
+}
+
+.imageview-logo-prodi {
+
+    -fx-effect: dropshadow(gaussian, #0000005a, 16, 0, 0, 8);
+
+}
+
+/* -Image- */
+
+/* JMTI */
 
 .image-jmti {
 
@@ -555,4 +1101,22 @@
 
 }
 
+/* -Buttons- */
+
+.button-majorstudyprograms-back {
+
+    -fx-background-color: transparent;
+    -fx-text-fill: gray-700;
+    -fx-padding: 0 0 0 0;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #0000002a, 12, 0, 0, 4);
+    -fx-graphic: url("../Assets/Icons/Back.png");
+}
+
+.button-majorstudyprograms-back:hover {
+
+    -fx-text-fill: gray-900;
+    -fx-effect: dropshadow(gaussian, #0000005a, 16, 0, 0, 4);
+    -fx-graphic: url("../Assets/Icons/BackHover.png");
+}
 
