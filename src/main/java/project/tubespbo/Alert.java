@@ -14,7 +14,6 @@ public class Alert {
 
     public Alert(String text) {
         this.alertLabel = new Label(text);
-
         this.alertLabel.setTextFill(Color.web("#cf313b"));
         this.alertLabel.setFont(Font.font("Inter", 14));
     }
