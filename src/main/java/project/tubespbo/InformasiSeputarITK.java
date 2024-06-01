@@ -19,7 +19,7 @@ public class InformasiSeputarITK extends Application {
 
         stage.setTitle("ISI | Maps Interaktif");
         stage.setScene(scene);
-        stage.setMinWidth(1000);
+        stage.setMinWidth(1150);
         stage.setMinHeight(600);
         stage.show();
     }

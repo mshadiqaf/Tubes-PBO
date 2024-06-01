@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="anchorpane-mainpane" stylesheets="@../Styles/MainLightTheme.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.tubespbo.Controllers.SideBar.DashboardController">
+   <children>
+       <VBox layoutX="51.0" layoutY="102.0" minHeight="200.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox minHeight="48.0" prefHeight="48.0" prefWidth="200.0" style="-fx-border-color: gray-200; -fx-border-width: 0 0 1 0;">
+               <children>
+                  <Label styleClass="label-display" text="Dashboard">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="32.0" right="32.0" top="24.0" />
+               </VBox.margin>
+            </HBox>
+            <AnchorPane style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets left="8.0" top="2.0" />
+               </VBox.margin>
+               <children>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="0.7999954223632812" maxHeight="1.7976931348623157E308" styleClass="scrollpane-dashboard-root" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="24.0" style="-fx-background-color: white;">
+                           <children>
+                              <AnchorPane maxHeight="200.0" maxWidth="1.7976931348623157E308" minHeight="180.0" prefHeight="180.0" styleClass="anchorpane-dashboard-container-1" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets left="24.0" right="20.0" top="32.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <AnchorPane fx:id="imageContainer" styleClass="anchorpane-dashboard-image" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <AnchorPane styleClass="vbox-dashboard-container-2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <VBox alignment="CENTER_LEFT" maxWidth="560.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="12.0">
+                                       <children>
+                                          <Label focusTraversable="false" maxWidth="1.7976931348623157E308" styleClass="label-custom-1" text="Explore the campus with our Interactive Map!" VBox.vgrow="ALWAYS">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label focusTraversable="false" maxWidth="1.7976931348623157E308" styleClass="label-custom-2" text="Get to know what's inside the Kalimantan Institute of Techonology about lecture buildings, along with it's rooms." textOverrun="WORD_ELLIPSIS" wrapText="true" VBox.vgrow="ALWAYS">
+                                             <VBox.margin>
+                                                <Insets top="8.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Button fx:id="tryItButton" alignment="CENTER" contentDisplay="RIGHT" focusTraversable="false" graphicTextGap="8.0" maxHeight="32.0" minHeight="32.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#loadInteractiveMapView" prefHeight="32.0" text="Try it" VBox.vgrow="ALWAYS">
+                                             <styleClass>
+                                                <String fx:value="label-subbody-large" />
+                                                <String fx:value="button-tryit" />
+                                             </styleClass>
+                                             <graphic>
+                                                <ImageView blendMode="DIFFERENCE" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Assets/Icons/Check.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <VBox.margin>
+                                                <Insets top="16.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                              <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="24.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="24.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <HBox maxHeight="120.0" minWidth="-Infinity" spacing="24.0" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <VBox maxWidth="1.7976931348623157E308" minWidth="160.0" styleClass="vbox-dashboard-container-1" HBox.hgrow="ALWAYS">
+                                                   <children>
+                                                      <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-subheading" text="Study Programs" wrapText="true" VBox.vgrow="ALWAYS">
+                                                         <VBox.margin>
+                                                            <Insets left="24.0" right="24.0" top="24.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-total" text="22" VBox.vgrow="ALWAYS">
+                                                         <VBox.margin>
+                                                            <Insets left="24.0" right="24.0" top="12.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <StackPane alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+                                                         <VBox.margin>
+                                                            <Insets bottom="16.0" left="24.0" right="24.0" top="12.0" />
+                                                         </VBox.margin>
+                                                         <children>
+                                                            <Button fx:id="checkButton" alignment="CENTER_RIGHT" contentDisplay="RIGHT" focusTraversable="false" graphicTextGap="8.0" maxHeight="32.0" minHeight="32.0" mnemonicParsing="false" onAction="#loadMajorStudyProgramsView" prefHeight="32.0" text="Check">
+                                                               <styleClass>
+                                                                  <String fx:value="label-subbody-large" />
+                                                                  <String fx:value="button-check" />
+                                                               </styleClass>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../Assets/Icons/Check.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </Button>
+                                                         </children>
+                                                      </StackPane>
+                                                   </children>
+                                                </VBox>
+                                                <VBox maxWidth="1.7976931348623157E308" minWidth="160.0" styleClass="vbox-dashboard-container-1" HBox.hgrow="ALWAYS">
+                                                   <children>
+                                                      <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-subheading" text="Majors" wrapText="true" VBox.vgrow="ALWAYS">
+                                                         <VBox.margin>
+                                                            <Insets left="24.0" right="24.0" top="24.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-total" text="5" wrapText="true" VBox.vgrow="ALWAYS">
+                                                         <VBox.margin>
+                                                            <Insets left="24.0" right="24.0" top="12.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <StackPane alignment="CENTER_RIGHT" VBox.vgrow="ALWAYS">
+                                                         <VBox.margin>
+                                                            <Insets bottom="16.0" left="24.0" right="24.0" top="12.0" />
+                                                         </VBox.margin>
+                                                         <children>
+                                                            <Button fx:id="checkButton1" alignment="CENTER_RIGHT" contentDisplay="RIGHT" focusTraversable="false" graphicTextGap="8.0" maxHeight="32.0" minHeight="32.0" mnemonicParsing="false" onAction="#loadMajorStudyProgramsView" prefHeight="32.0" text="Check">
+                                                               <styleClass>
+                                                                  <String fx:value="label-subbody-large" />
+                                                                  <String fx:value="button-check" />
+                                                               </styleClass>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../Assets/Icons/Check.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </Button>
+                                                         </children>
+                                                      </StackPane>
+                                                   </children>
+                                                </VBox>
+                                                <VBox maxWidth="200.0" minWidth="140.0" prefWidth="160.0" styleClass="vbox-dashboard-container-1" HBox.hgrow="ALWAYS">
+                                                   <children>
+                                                      <Label alignment="CENTER" maxWidth="1.7976931348623157E308" styleClass="label-subheading" text="Active Students" textOverrun="WORD_ELLIPSIS" wrapText="true" VBox.vgrow="ALWAYS">
+                                                         <VBox.margin>
+                                                            <Insets left="24.0" right="24.0" top="24.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <Label alignment="CENTER" maxWidth="1.7976931348623157E308" styleClass="label-total" text="4000+" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" VBox.vgrow="ALWAYS">
+                                                         <VBox.margin>
+                                                            <Insets bottom="24.0" left="24.0" right="24.0" top="12.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox spacing="24.0" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <VBox maxWidth="1.7976931348623157E308" minWidth="220.0" prefWidth="360.0" styleClass="vbox-dashboard-container-1" HBox.hgrow="ALWAYS">
+                                                   <children>
+                                                      <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" styleClass="label-subheading" text="Study Programs Chart" wrapText="true">
+                                                         <VBox.margin>
+                                                            <Insets left="24.0" right="24.0" top="24.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <PieChart fx:id="pieChart" labelLineLength="16.0" maxHeight="1.7976931348623157E308" maxWidth="360.0" minHeight="240.0" minWidth="220.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" styleClass="chart-pie">
+                                                         <VBox.margin>
+                                                            <Insets bottom="8.0" left="4.0" right="4.0" />
+                                                         </VBox.margin>
+                                                      </PieChart>
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="200.0" prefWidth="520.0" styleClass="vbox-dashboard-container-1" HBox.hgrow="ALWAYS">
+                                                   <children>
+                                                      <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-subheading" text="Campus Accreditation" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                                                         <VBox.margin>
+                                                            <Insets left="24.0" right="24.0" top="24.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <ImageView fitHeight="160.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" styleClass="imageview-logo-jurusan" VBox.vgrow="ALWAYS">
+                                                         <image>
+                                                            <Image url="@../Assets/Logos/LogoITK2.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label alignment="TOP_LEFT" lineSpacing="4.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" styleClass="label-subbody-medium" text="Badan Akreditasi Nasional Perguruan Tinggi (BAN PT) menerbitkan Sertikat Akreditasi Institusi kepada Institut Teknologi Kalimantan (ITK) pada 12 Desember 2018. Berdasarkan Keputusan BAN-PT No. 385/SK/BAN-PT/Akred/PT/XII/2018 menyatakan bahwa Institut Teknologi Kalimantan Terakreditasi B. Sertifikat ini berlaku hingga 12 Desember 2023 atau mendapatkan evaluasi setiap lima tahun." textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                                                         <VBox.margin>
+                                                            <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                   </children></VBox>
+                                             </children></HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="320.0" minWidth="190.0" prefWidth="280.0" spacing="12.0" styleClass="vbox-dashboard-container-3" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <ImageView fitHeight="120.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" styleClass="imageview-logo-km" VBox.vgrow="ALWAYS">
+                                             <VBox.margin>
+                                                <Insets top="32.0" />
+                                             </VBox.margin>
+                                             <image>
+                                                <Image url="@../Assets/Logos/LogoKMITK.png" />
+                                             </image>
+                                          </ImageView>
+                                          <VBox VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-subheading" text="About KM ITK" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label alignment="TOP_LEFT" lineSpacing="4.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-subbody-medium" text="KM ITK merupakan singkatan dari Keluarga Mahasiswa Institut Teknologi Kalimantan. KM ITK bekerja layaknya organisasi sentral yang menaungi seluruh kegiatan mahasiswa yang ada di ITK. Didirikan dengan berasaskan kekeluargaan dan berlandaskan Pancasila dan Undang-Undang Dasar 1945." textAlignment="JUSTIFY" wrapText="true">
+                                                   <VBox.margin>
+                                                      <Insets top="12.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="12.0">
+                                                   <children>
+                                                      <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <Label alignment="TOP_CENTER" lineSpacing="4.0" maxHeight="28.0" maxWidth="1.7976931348623157E308" minWidth="-Infinity" styleClass="label-total-2" text="100+" textAlignment="JUSTIFY" wrapText="true" VBox.vgrow="ALWAYS" />
+                                                            <Label alignment="TOP_CENTER" lineSpacing="4.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-subbody-large" text="Fungsionaris" textAlignment="CENTER" wrapText="true" VBox.vgrow="ALWAYS" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <Label alignment="TOP_CENTER" lineSpacing="4.0" maxHeight="28.0" maxWidth="1.7976931348623157E308" minWidth="-Infinity" styleClass="label-total-2" text="10+" textAlignment="JUSTIFY" wrapText="true" VBox.vgrow="ALWAYS" />
+                                                            <Label alignment="TOP_CENTER" lineSpacing="4.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-subbody-large" text="Sektoral" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" VBox.vgrow="ALWAYS" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <Label alignment="TOP_CENTER" lineSpacing="4.0" maxHeight="28.0" maxWidth="1.7976931348623157E308" minWidth="-Infinity" styleClass="label-total-2" text="15+" textAlignment="JUSTIFY" wrapText="true" VBox.vgrow="ALWAYS" />
+                                                            <Label alignment="TOP_CENTER" lineSpacing="4.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-subbody-large" text="Himpunan" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" VBox.vgrow="ALWAYS" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets top="32.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="24.0" right="24.0" top="24.0" />
+                                             </VBox.margin>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="24.0" left="24.0" right="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+                  <HBox alignment="BOTTOM_LEFT" minHeight="12.0" styleClass="hbox-dashboard-head" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="1.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

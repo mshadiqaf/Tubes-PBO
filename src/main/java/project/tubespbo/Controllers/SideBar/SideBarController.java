@@ -63,9 +63,9 @@ public class SideBarController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Platform.runLater(() -> interactiveMapButton.requestFocus());
+        Platform.runLater(() -> dashboardButton.requestFocus());
 
-        loadInteractiveMap();
+        loadDashboard();
 
         if (LoginController.getSession() != null) {
             roleLabel.setText(LoginController.getSession().getRole());
