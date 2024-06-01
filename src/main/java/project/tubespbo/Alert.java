@@ -1,27 +1,26 @@
-package project.tubespbo.Models;
+package project.tubespbo;
 
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
-public class AlertModel {
+public class Alert {
 
-    private Alert alertBox;
+    private javafx.scene.control.Alert alertBox;
     private Label alertLabel;
 
-    public AlertModel() {
+    public Alert() {
     }
 
-    public AlertModel(String text) {
+    public Alert(String text) {
         this.alertLabel = new Label(text);
 
         this.alertLabel.setTextFill(Color.web("#cf313b"));
         this.alertLabel.setFont(Font.font("Inter", 14));
     }
 
-    public AlertModel(Alert.AlertType type, String title, String header, String context) {
-        this.alertBox = new Alert(type);
+    public Alert(javafx.scene.control.Alert.AlertType type, String title, String header, String context) {
+        this.alertBox = new javafx.scene.control.Alert(type);
         this.alertBox.setTitle(title);
         this.alertBox.setHeaderText(header);
         this.alertBox.setContentText(context);
@@ -37,8 +36,8 @@ public class AlertModel {
         }
     }
 
-    public void setAlertBox(Alert.AlertType type, String title, String header, String context) {
-        this.alertBox = new Alert(type);
+    public void setAlertBox(javafx.scene.control.Alert.AlertType type, String title, String header, String context) {
+        this.alertBox = new javafx.scene.control.Alert(type);
         this.alertBox.setTitle(title);
         this.alertBox.setHeaderText(header);
         this.alertBox.setContentText(context);
@@ -48,7 +47,7 @@ public class AlertModel {
         return this.alertLabel;
     }
 
-    public Alert getAlertBox() { return alertBox; }
+    public javafx.scene.control.Alert getAlertBox() { return alertBox; }
 
     public String getTitle() {
         if (this.alertBox != null) {

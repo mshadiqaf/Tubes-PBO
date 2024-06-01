@@ -19,7 +19,7 @@ import java.io.IOException;
 public class LandingPageController {
 
     @FXML
-    private StackPane parentContainer;
+    private StackPane rootPane;
 
     @FXML
     private HBox hBox1;
@@ -29,22 +29,33 @@ public class LandingPageController {
 
     @FXML
     private void loadMain(ActionEvent event) throws IOException {
+
+//      MENONAKTIFKAN TOMBOL "GET STARTED" SETELAH DIKLIK
         startButton.setDisable(true);
 
+//      LOAD SCENE HALAMAN LOGIN
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/project/tubespbo/Views/LoginPageView.fxml"));
         Parent root = loader.load();
-        Scene scene = startButton.getScene();
 
-        root.translateYProperty().set(-scene.getHeight());
-        parentContainer.getChildren().add(root);
+//      MENDAPATKAN INFORMASI POSISI SCENE SEBELUMNYA
+        Scene scene = rootPane.getScene();
+        root.translateYProperty().set(scene.getHeight());
 
+//      MENGGANTIKAN SCENE DENGAN SCENE YANG BARU(SCENE LOGIN)
+        rootPane.getChildren().add(root);
+
+//      MEMBUAT ANIMASI UNTUK PERGANTIAN SCENE
         Timeline timeline = new Timeline();
-        KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_BOTH);
-        KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
-        timeline.getKeyFrames().add(kf);
+        KeyValue keyValue = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_BOTH);
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1), keyValue);
+        timeline.getKeyFrames().add(keyFrame);
         timeline.setOnFinished(event1 -> {
-            parentContainer.getChildren().remove(hBox1);
+//          MENGHAPUS SCENE SEBELUMNYA SETELAH ANIMASI SELESAI
+            rootPane.getChildren().remove(hBox1);
         });
+
+//      MEMULAI MEMAINKAN ANIMASI
         timeline.play();
+
     }
 }

@@ -1,7 +1,7 @@
 package project.tubespbo.Controllers;
 
-import project.tubespbo.Controllers.MainPage.MainPageController;
-import project.tubespbo.Models.AlertModel;
+import javafx.application.Platform;
+import javafx.fxml.Initializable;
 import project.tubespbo.Models.LoginModel;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -11,250 +11,245 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.effect.BlendMode;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
 import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
-public class LoginPageController {
+public class LoginPageController implements Initializable {
 
+    //  KONDISI AWAL MODE TEMA PROGRAM = LIGHT MODE
     private boolean isLightMode = true;
-    private AlertModel alertUsername = new AlertModel();
-    private AlertModel alertPassword = new AlertModel();
-    private AlertModel alertBox = new AlertModel();
-    private static LoginModel session;
+
+    //  TEKS PERINGATAN DIBAWAH USERNAME FIELD
+    private project.tubespbo.Alert alertUsername = new project.tubespbo.Alert();
+
+    //  TEKS PERINGATAN DIBAWAH PASSWORD FIELD
+    private project.tubespbo.Alert alertPassword = new project.tubespbo.Alert();
+
+    //  KOTAK POP UP PERINGATAN
+    private project.tubespbo.Alert alertBox = new project.tubespbo.Alert();
+
+    //  OBJEK LOGIN
     private LoginModel loginModel = new LoginModel();
 
+    //  SESSION UNTUK DATA OBJEK LOGIN
+    private static LoginModel session;
 
     @FXML
-    private StackPane rootLoginPane, passwordContainer;
+    private StackPane rootPane, passwordPane;
 
     @FXML
     private VBox loginPane;
 
-    @FXML
-    private ImageView themeMode;
-
+    //  TERDAPAT "passwordFieldShown" UNTUK PASSWORDFIELD YANG TER-LIHAT
     @FXML
     private TextField usernameField, passwordFieldShown;
 
+    //  TERDAPAT "passwordFieldHidden" UNTUK PASSWORDFIELD YANG TER-SENSOR
     @FXML
-    private PasswordField passwordField;
+    private PasswordField passwordFieldHidden;
 
     @FXML
-    private Button showPasswordButton, signInButton, guestButton;
+    private Button userSignInButton, guestSignInButton, showPasswordButton;
 
-    public static LoginModel getSession() {
 
-        return session;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
 
-    public static void setSession(LoginModel session) {
 
-        LoginPageController.session = session;
+    //  METHOD MENGGANTI SCENE
+    private void switchScene() {
 
+//      MENONAKTIFKAN TOMBOL "SIGN IN" DAN "LOGIN AS A GUEST" APABILA LOGIN VALID
+        userSignInButton.setDisable(true);
+        guestSignInButton.setDisable(true);
+
+//      MENYIMPAN DATA OBJEK AKUN KEDALAM SESSION
+        LoginPageController.session = loginModel;
+
+//      LOAD SCENE HALAMAN UTAMA
+        Platform.runLater(() -> {
+
+//          TRY AND CATCH UNTUK ERROR
+            try {
+                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/project/tubespbo/Views/MainPageView.fxml")));
+                Scene mainPageScene = new Scene(root);
+
+//              MENDAPATKAN INFORMASI UKURAN SCENE SEBELUMNYA SEHINGGA UKURAN SESUAI DENGAN SCENE BARU
+                Stage stage = (Stage) rootPane.getScene().getWindow();
+                double prevWidth = stage.getWidth();
+                double prevHeight = stage.getHeight();
+
+//              MENGGANTI SCENE SEBELUMNYA DENGAN SCENE YANG BARU
+                stage.setScene(mainPageScene);
+                stage.setWidth(prevWidth);
+                stage.setHeight(prevHeight);
+
+            } catch (IOException e) {
+
+                e.printStackTrace();
+
+            }
+        });
     }
 
-    public void switchScene() throws IOException {
 
-        signInButton.setDisable(true);
-        guestButton.setDisable(true);
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/project/tubespbo/Views/MainPageView.fxml"));
-        Parent root = loader.load();
-
-        Scene mainPageScene = new Scene(root);
-
-        Stage stage = (Stage) rootLoginPane.getScene().getWindow();
-
-        double prevWidth = stage.getWidth();
-        double prevHeight = stage.getHeight();
-
-
-        stage.setScene(mainPageScene);
-
-        stage.setWidth(prevWidth);
-        stage.setHeight(prevHeight);
-
-    }
-
+    //  METHOD UNTUK LOGIN SEBAGAI STATUS CIVITAS
     @FXML
-    private void loginAsUser() throws IOException {
+    private void loginAsUser() {
 
-        loginModel.setUsername("MahasiswaITK");
+//      SET USERNAME DAN PASSWORD AKUN CIVITAS
+        loginModel.setUsername("Civitas");
         loginModel.setPassword("K@mpusM3rdeka!");
 
-        String username = usernameField.getText();
-        String password = "";
+//      MENDAPATKAN DATA USERNAME DAN PASSWORD DARI INPUTAN DALAM FIELD
+        String usernameInput = usernameField.getText();
+        String passwordInput = passwordFieldHidden.isVisible() ? passwordFieldHidden.getText() : passwordFieldShown.getText();
 
-        if (passwordField.isVisible()) {
-
-            password = passwordField.getText();
-
-        } else if (passwordFieldShown.isVisible()) {
-
-            password = passwordFieldShown.getText();
-
-        }
-
-        if (username.isEmpty()) {
-
+//      KONDISI SET TEKS PERINGATAN APABILA USERNAME KOSONG ATAU SALAH
+        if (usernameInput.isEmpty()) {
             alertUsername.setAlertLabel("Username is empty.");
             showAlert(alertUsername);
-
-        } else if (!username.equals(loginModel.getUsername())) {
-
-            alertUsername.setAlertLabel("Username is wrong.");
+        } else if (!usernameInput.equals(loginModel.getUsername())) {
+            alertUsername.setAlertLabel("Username is invalid.");
             showAlert(alertUsername);
-
         } else {
-
             loginPane.getChildren().remove(alertUsername.getAlertLabel());
             usernameField.setStyle("");
-
         }
 
-        if (username.isEmpty() && password.equals(loginModel.getPassword())) {
-
+//      KONDISI SET TEKS PERINGATAN APABILA PASSWORD TERISI SEBELUM USERNAME TERISI, APABILA PASSWORD KOSONG ATAU SALAH
+        if (usernameInput.isEmpty() && !passwordInput.isEmpty()) {
             alertPassword.setAlertLabel("Fill out the username first.");
             showAlert(alertPassword);
-
-        } else if (password.isEmpty()) {
-
+        } else if (passwordInput.isEmpty()) {
             alertPassword.setAlertLabel("Password is empty.");
             showAlert(alertPassword);
-
-        } else if (!password.equals(loginModel.getPassword())) {
-
+        } else if (!passwordInput.equals(loginModel.getPassword())) {
             alertPassword.setAlertLabel("Password is incorrect.");
             showAlert(alertPassword);
-
         } else {
-
             loginPane.getChildren().remove(alertPassword.getAlertLabel());
-            passwordField.setStyle("");
+            passwordFieldHidden.setStyle("");
             passwordFieldShown.setStyle("");
-
         }
 
-        if (username.equals(loginModel.getUsername()) && password.equals(loginModel.getPassword())) {
+//      KONDISI APABILA USERNAME DAN PASSWORD CIVITAS BENAR
+        if (usernameInput.equals(loginModel.getUsername()) && passwordInput.equals(loginModel.getPassword())) {
 
+//          SET STATUS ROLE SEBAGAI CIVITAS
             loginModel.setRole("Civitas");
-            LoginPageController.session = loginModel;
-
-            loginPane.getChildren().remove(alertUsername.getAlertLabel());
-            loginPane.getChildren().remove(alertPassword.getAlertLabel());
-
             switchScene();
 
         }
-
     }
 
-    @FXML
-    private void loginAsGuest() throws IOException {
 
-        alertBox.setAlertBox(Alert.AlertType.CONFIRMATION, "Log In Confirmation", "Are you sure want to log in as a Guest?", "");
+    //  METHOD UNTUK LOGIN SEBAGAI GUEST/TAMU
+    @FXML
+    private void loginAsGuest() {
+
+//      MENAMPILKAN KOTAK POP UP UNTUK KONFIRMASI LOGIN SEBAGAI TAMU
+        alertBox.setAlertBox(javafx.scene.control.Alert.AlertType.CONFIRMATION, "Log In Confirmation", "Are you sure want to log in as a Guest?", "");
         alertBox.getAlertBox().showAndWait();
 
+//      APABILA PENGGUNA KLIK TOMBOL "OK"
         if (alertBox.getAlertBox().getResult() == ButtonType.OK) {
 
+//          SET STATUS ROLE SEBAGAI GUEST/TAMU
             loginModel.setRole("Guest");
-            LoginPageController.session = loginModel;
-
             switchScene();
-
         }
-
     }
 
-    private void showAlert(AlertModel field) {
 
+    //  METHOD UNTUK MENAMPILKAN TEKS PERINGATAN APABILA DATA AKUN TIDAK VALID
+    private void showAlert(project.tubespbo.Alert field) {
+
+//      MEMUNCUKAN TEKS PERINGATAN DIBAWAH FIELD INPUTAN USERNAME
         if (field.equals(alertUsername)) {
-
             usernameField.setStyle("-fx-border-color: #cf313b;");
-
             loginPane.getChildren().remove(alertUsername.getAlertLabel());
             loginPane.getChildren().add(loginPane.getChildren().indexOf(usernameField) + 1, alertUsername.getAlertLabel());
             VBox.setMargin(alertUsername.getAlertLabel(), new Insets(5, 0, 0, 30));
-
         }
 
+//      MEMUNCULKAN TEKS PERINGATAN DIBAWAH FIELD INPUTAN PASSWORD
         if (field.equals(alertPassword)) {
-
-            passwordField.setStyle("-fx-border-color: #cf313b;");
+            passwordFieldHidden.setStyle("-fx-border-color: #cf313b;");
             passwordFieldShown.setStyle("-fx-border-color: #cf313b;");
-
             loginPane.getChildren().remove(alertPassword.getAlertLabel());
-            loginPane.getChildren().add(loginPane.getChildren().indexOf(passwordContainer) + 1, field.getAlertLabel());
-
+            loginPane.getChildren().add(loginPane.getChildren().indexOf(passwordPane) + 1, field.getAlertLabel());
             VBox.setMargin(alertPassword.getAlertLabel(), new Insets(5, 0, 0, 30));
 
+//          KONDISI UNTUK MENYESUAIKAN PEMUNCULKAN TEKS AGAR RESPONSIF DAN TIDAK TABRAKAN
             if (loginPane.getChildren().contains(alertUsername.getAlertLabel())) {
-
-                VBox.setMargin(signInButton, new Insets(20, 30, 0, 30));
-
+                VBox.setMargin(userSignInButton, new Insets(20, 30, 0, 30));
             } else {
-
-                VBox.setMargin(signInButton, new Insets(30, 30, 0, 30));
-
+                VBox.setMargin(userSignInButton, new Insets(30, 30, 0, 30));
             }
-
         }
-
     }
 
+
+    //  METHOD UNTUK MEMPERLIHATKAN KARAKTER PASSWORD YANG DI SENSOR
     @FXML
     private void showPassword() {
 
-        if (passwordField.isVisible()) {
-
-            passwordFieldShown.setText(passwordField.getText());
-            passwordField.setVisible(false);
+        if (passwordFieldHidden.isVisible()) {
+            passwordFieldShown.setText(passwordFieldHidden.getText());
+            passwordFieldHidden.setVisible(false);
             passwordFieldShown.setVisible(true);
             showPasswordButton.getStyleClass().clear();
             showPasswordButton.getStyleClass().add("button-showpass");
-
         } else {
-
-            passwordField.setText(passwordFieldShown.getText());
-            passwordField.setVisible(true);
+            passwordFieldHidden.setText(passwordFieldShown.getText());
+            passwordFieldHidden.setVisible(true);
             passwordFieldShown.setVisible(false);
             showPasswordButton.getStyleClass().clear();
             showPasswordButton.getStyleClass().add("button-hidepass");
-
         }
 
     }
 
+
+    //  METHOD UNTUK MENGGANTI TEMA DARK/LIGHT MODE
     @FXML
     private void changeThemeMode() {
+        ObservableList<String> stylesheets = rootPane.getStylesheets();
 
-        ObservableList<String> stylesheets = rootLoginPane.getStylesheets();
-
+//      KONDISI UNTUK MENGGANTI MENJADI DARK MODE
         if (isLightMode) {
-
             stylesheets.clear();
-            stylesheets.add(Objects.requireNonNull(getClass().getResource("/project/tubespbo/Styles/LoginDarkTheme.css")).toExternalForm());
-            themeMode.getStyleClass().clear();
-            themeMode.getStyleClass().add("image-theme");
+            stylesheets.add(Objects.requireNonNull(getClass().getResource("/project/tubespbo/Styles/LoginDark.css")).toExternalForm());
             isLightMode = false;
             showPasswordButton.setBlendMode(BlendMode.ADD);
 
+//      KONDISI UNTUK MENGGANTI MENJADI LIGHT MODE
         } else {
-
             stylesheets.clear();
-            stylesheets.add(Objects.requireNonNull(getClass().getResource("/project/tubespbo/Styles/LoginLightTheme.css")).toExternalForm());
-            themeMode.getStyleClass().clear();
-            themeMode.getStyleClass().add("image-theme");
+            stylesheets.add(Objects.requireNonNull(getClass().getResource("/project/tubespbo/Styles/LoginLight.css")).toExternalForm());
             isLightMode = true;
             showPasswordButton.setBlendMode(BlendMode.SRC_ATOP);
-
         }
 
     }
+
+
+    //  SETTER UNTUK DATA AKUN MELALUI SESSION
+    public static LoginModel getSession() {
+        return session;
+    }
+
+    //  GETTER UNTUK MENDAPATKAN INFORMASI TENTANG DATA AKUN MELALUI SESSION
+    public static void setSession(LoginModel session) {
+        LoginPageController.session = session;
+    }
+
 }

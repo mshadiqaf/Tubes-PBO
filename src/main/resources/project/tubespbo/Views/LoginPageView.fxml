@@ -6,8 +6,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Glow?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
@@ -18,7 +16,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="rootLoginPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="root" stylesheets="@../Styles/LoginLightTheme.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.tubespbo.Controllers.LoginPageController">
+<StackPane fx:id="rootPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="root" stylesheets="@../Styles/LoginLightTheme.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.tubespbo.Controllers.LoginPageController">
    <children>
       <Arc fill="WHITE" length="180.0" radiusX="38.0" radiusY="40.0" stroke="#00000032" strokeType="INSIDE" styleClass="pane-round-outer">
          <StackPane.margin>
@@ -70,7 +68,7 @@
                   <Insets left="32.0" right="32.0" top="12.0" />
                </VBox.margin>
             </Label>
-            <StackPane fx:id="passwordContainer">
+            <StackPane fx:id="passwordPane">
                <VBox.margin>
                   <Insets left="32.0" right="32.0" />
                </VBox.margin>
@@ -83,7 +81,7 @@
                         <Cursor fx:constant="TEXT" />
                      </cursor>
                   </TextField>
-                  <PasswordField fx:id="passwordField" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="320.0" promptText="Enter your password" styleClass="field-password">
+                  <PasswordField fx:id="passwordFieldHidden" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="320.0" promptText="Enter your password" styleClass="field-password">
                      <font>
                         <Font name="Inter Medium" size="14.0" />
                      </font>
@@ -98,7 +96,7 @@
                   </Button>
                </children>
             </StackPane>
-            <Button fx:id="signInButton" alignment="CENTER" mnemonicParsing="false" onAction="#loginAsUser" prefHeight="32.0" prefWidth="400.0" styleClass="button-user" text="Sign in" textAlignment="CENTER" textFill="#00000032">
+            <Button fx:id="userSignInButton" alignment="CENTER" mnemonicParsing="false" onAction="#loginAsUser" prefHeight="32.0" prefWidth="400.0" styleClass="button-user" text="Sign in" textAlignment="CENTER" textFill="#00000032">
                <font>
                   <Font name="Inter SemiBold" size="14.0" />
                </font>
@@ -157,7 +155,7 @@
                   </Line>
                </children>
             </HBox>
-            <Button fx:id="guestButton" alignment="CENTER" mnemonicParsing="false" onAction="#loginAsGuest" prefHeight="32.0" prefWidth="400.0" styleClass="button-guest" text="Continue as a guest" textAlignment="CENTER">
+            <Button fx:id="guestSignInButton" alignment="CENTER" mnemonicParsing="false" onAction="#loginAsGuest" prefHeight="32.0" prefWidth="400.0" styleClass="button-guest" text="Continue as a guest" textAlignment="CENTER">
                <font>
                   <Font name="Inter SemiBold" size="14.0" />
                </font>
@@ -170,14 +168,6 @@
             </Button>
          </children>
       </VBox>
-      <ImageView fx:id="themeMode" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#changeThemeMode" pickOnBounds="true" preserveRatio="true" styleClass="image-theme" visible="false">
-         <effect>
-            <Glow level="0.35" />
-         </effect>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
       <Arc fill="WHITE" length="180.0" radiusX="37.0" radiusY="39.0" stroke="TRANSPARENT" strokeType="INSIDE" styleClass="pane-round-inner">
          <StackPane.margin>
             <Insets bottom="548.0" />

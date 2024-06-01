@@ -7,7 +7,6 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
@@ -17,7 +16,7 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import org.controlsfx.control.ToggleSwitch;
 import project.tubespbo.Controllers.LoginPageController;
-import project.tubespbo.Models.AlertModel;
+import project.tubespbo.Alert;
 
 import java.io.IOException;
 import java.net.URL;
@@ -28,7 +27,7 @@ import java.util.logging.Logger;
 public class MainPageController implements Initializable {
 
     Parent parent = null;
-    AlertModel alertModel = new AlertModel();
+    Alert alert = new Alert();
 
     private static MainPageController instance;
 
@@ -180,10 +179,10 @@ public class MainPageController implements Initializable {
     @FXML
     private void logout() throws IOException {
 
-        alertModel.setAlertBox(Alert.AlertType.CONFIRMATION, "Log Out Confirmation", "Are you sure want to log out?", "");
-        alertModel.getAlertBox().showAndWait();
+        alert.setAlertBox(javafx.scene.control.Alert.AlertType.CONFIRMATION, "Log Out Confirmation", "Are you sure want to log out?", "");
+        alert.getAlertBox().showAndWait();
 
-        if (alertModel.getAlertBox().getResult() == ButtonType.OK) {
+        if (alert.getAlertBox().getResult() == ButtonType.OK) {
 
 
             LoginPageController.setSession(null);
