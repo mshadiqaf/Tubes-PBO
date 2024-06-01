@@ -46,6 +46,54 @@
     about-focused: url("../Assets/Icons/AboutFocused.png");
 
     -fx-background-color: gray-100;
+
+    /* JMTI */
+
+    JMTI: url("../Assets/Logos/Jurusan/JMTI/LogoJMTI.png");
+
+    bisnisdigital: url("../Assets/Logos/Jurusan/JMTI/Prodi/LogoBisnisDigital.png");
+    ilmuaktuaria: url("../Assets/Logos/Jurusan/JMTI/Prodi/LogoIlmuAktuaria.png");
+    informatika: url("../Assets/Logos/Jurusan/JMTI/Prodi/LogoInformatika.png");
+    matematika: url("../Assets/Logos/Jurusan/JMTI/Prodi/LogoMatematika.png");
+    sisteminformasi: url("../Assets/Logos/Jurusan/JMTI/Prodi/LogoSistemInformasi.png");
+    statistika: url("../Assets/Logos/Jurusan/JMTI/Prodi/LogoStatistika.png");
+
+    /* JSTPK */
+
+    JSTPK: url("../Assets/Logos/Jurusan/JSTPK/LogoJSTPK.png");
+
+    fisika: url("../Assets/Logos/Jurusan/JSTPK/Prodi/LogoFisika.png");
+    teknikkelautan: url("../Assets/Logos/Jurusan/JSTPK/Prodi/LogoTeknikKelautan.png");
+    teknologipangan: url("../Assets/Logos/Jurusan/JSTPK/Prodi/LogoTeknologiPangan.png");
+    teknikperkapalan: url("../Assets/Logos/Jurusan/JSTPK/Prodi/LogoTeknikPerkapalan.png");
+
+    /* JTIP */
+
+    JTIP: url("../Assets/Logos/Jurusan/JTIP/LogoJTIP.png");
+
+    rekayasakeselamatan: url("../Assets/Logos/Jurusan/JTIP/Prodi/LogoRekayasaKeselamatan.png");
+    teknikelektro: url("../Assets/Logos/Jurusan/JTIP/Prodi/LogoTeknikElektro.png");
+    teknikindustri: url("../Assets/Logos/Jurusan/JTIP/Prodi/LogoTeknikIndustri.png");
+    teknikkimia: url("../Assets/Logos/Jurusan/JTIP/Prodi/LogoTeknikKimia.png");
+    tekniklogistik: url("../Assets/Logos/Jurusan/JTIP/Prodi/LogoTeknikLogistik.png");
+    teknikmesin: url("../Assets/Logos/Jurusan/JTIP/Prodi/LogoTeknikMesin.png");
+
+    /* JTSP */
+
+    JTSP: url("../Assets/Logos/Jurusan/JTSP/LogoJTSP.png");
+
+    arsitektur: url("../Assets/Logos/Jurusan/JTSP/Prodi/LogoArsitektur.png");
+    desainkomunikasivisual: url("../Assets/Logos/Jurusan/JTSP/Prodi/LogoDesainKomunikasiVisual.png");
+    perencanaanwilayahdankota: url("../Assets/Logos/Jurusan/JTSP/Prodi/LogoPerencanaanWilayahdanKota.png");
+    tekniksipil: url("../Assets/Logos/Jurusan/JTSP/Prodi/LogoTeknikSipil.png");
+
+    /* JIKL */
+
+    JIKL: url("../Assets/Logos/Jurusan/JIKL/LogoJIKL.png");
+
+    tekniklingkungan: url("../Assets/Logos/Jurusan/JIKL/Prodi/LogoTeknikLingkungan.png");
+    teknikmaterialdanmetalurgi: url("../Assets/Logos/Jurusan/JIKL/Prodi/LogoTeknikMaterialdanMetalurgi.png");
+
 }
 
 .anchorpane-mainpane {
@@ -336,4 +384,175 @@
     -fx-text-fill: gray-200;
 
 }
+
+.image-jmti {
+
+    -fx-image: JMTI;
+
+}
+
+.image-bisnisdigital {
+
+    -fx-image: bisnisdigital;
+
+}
+
+.image-ilmuaktuaria {
+
+    -fx-image: ilmuaktuaria;
+
+}
+
+.image-informatika {
+
+    -fx-image: informatika;
+
+}
+
+.image-matematika {
+
+    -fx-image: matematika;
+
+}
+
+.image-sisteminformasi {
+
+    -fx-image: sisteminformasi;
+
+}
+
+.image-statistika {
+
+    -fx-image: statistika;
+
+}
+
+/* JSTPK */
+
+.image-jstpk {
+
+    -fx-image: JSTPK;
+
+}
+
+.image-fisika {
+
+    -fx-image: fisika;
+
+}
+
+.image-teknikkelautan {
+
+    -fx-image: teknikkelautan;
+
+}
+
+.image-teknologipangan {
+
+    -fx-image: teknologipangan;
+
+}
+
+.image-teknikperkapalan {
+
+    -fx-image: teknikperkapalan;
+
+}
+
+/* JTIP */
+
+.image-jtip {
+
+    -fx-image: JTIP;
+
+}
+
+.image-rekayasakeselamatan {
+
+    -fx-image: rekayasakeselamatan;
+
+}
+
+.image-teknikelektro {
+
+    -fx-image: teknikelektro;
+
+}
+
+.image-teknikindustri {
+
+    -fx-image: teknikindustri;
+
+}
+
+.image-teknikkimia {
+
+    -fx-image: teknikkimia;
+
+}
+
+.image-tekniklogistik {
+
+    -fx-image: tekniklogistik;
+
+}
+
+.image-teknikmesin {
+
+    -fx-image: teknikmesin;
+
+}
+
+/* JTSP */
+
+.image-jtsp {
+
+    -fx-image: JTSP;
+
+}
+
+.image-arsitektur {
+
+    -fx-image: arsitektur;
+
+}
+
+.image-desainkomunikasivisual {
+
+    -fx-image: desainkomunikasivisual;
+
+}
+
+.image-perencanaanwilayahdankota {
+
+    -fx-image: perencanaanwilayahdankota;
+
+}
+
+.image-tekniksipil {
+
+    -fx-image: tekniksipil;
+
+}
+
+/* JIKL */
+
+.image-jikl {
+
+    -fx-image: JIKL;
+
+}
+
+.image-tekniklingkungan {
+
+    -fx-image: tekniklingkungan;
+
+}
+
+.image-teknikmaterialdanmetalurgi {
+
+    -fx-image: teknikmaterialdanmetalurgi;
+
+}
+
 
