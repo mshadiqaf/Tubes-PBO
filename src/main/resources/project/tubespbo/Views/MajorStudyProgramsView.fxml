@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="anchorpane-mainpane" stylesheets="@../Styles/MainLightTheme.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.tubespbo.Controllers.SideBar.MajorStudyProgramsController">
+   <children>
+      <VBox layoutX="51.0" layoutY="102.0" minHeight="200.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox minHeight="48.0" prefHeight="48.0" prefWidth="200.0" style="-fx-border-color: gray-200; -fx-border-width: 0 0 1 0;">
+               <children>
+                  <Label focusTraversable="false" styleClass="label-display" text="Major &amp; Study Programs">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="32.0" right="32.0" top="24.0" />
+               </VBox.margin>
+            </HBox>
+            <AnchorPane fx:id="paneContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="32.0" left="32.0" right="32.0" top="32.0" />
+               </VBox.margin>
+               <children>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="scrollpane-majorstudyprograms-root" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="48.0" style="-fx-background-color: gray-50;">
+                           <children>
+                              <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="320.0" styleClass="vbox-majorstudyprograms-container-1" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets top="32.0" />
+                                       </VBox.margin>
+                                       <styleClass>
+                                          <String fx:value="imageview-logo-jurusan" />
+                                          <String fx:value="image-jmti" />
+                                       </styleClass>
+                                    </ImageView>
+                                    <Label fx:id="namaJMTI" contentDisplay="RIGHT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-body" text="Nama Jurusan" textAlignment="RIGHT" textOverrun="WORD_ELLIPSIS" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets left="48.0" right="48.0" top="24.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="deskripsiJMTI" focusTraversable="false" lineSpacing="8.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-subbody-large" text="Deskripsi Jurusan" textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets left="48.0" right="48.0" top="12.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="RIGHT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-body" text="Program Studi" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets left="48.0" right="48.0" top="48.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" spacing="32.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <Button fx:id="buttonBisnisDigital" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-bisnisdigital" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="buttonIlmuAktuaria" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-ilmuaktuaria" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="buttonInformatika" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-informatika" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="buttonMatematika" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-matematika" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="buttonSistemInformasi" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-sisteminformasi" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="buttonStatistika" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-statistika" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="42.0" left="48.0" right="48.0" top="24.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="24.0" right="24.0" top="72.0" />
+                                 </VBox.margin>
+                              </VBox>
+                              <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="320.0" styleClass="vbox-majorstudyprograms-container-1" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets top="32.0" />
+                                       </VBox.margin>
+                                       <styleClass>
+                                          <String fx:value="imageview-logo-jurusan" />
+                                          <String fx:value="image-jstpk" />
+                                       </styleClass>
+                                    </ImageView>
+                                    <Label fx:id="namaJSTPK" contentDisplay="RIGHT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-body" text="Nama Jurusan" textAlignment="RIGHT" textOverrun="WORD_ELLIPSIS" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets left="48.0" right="48.0" top="24.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="deskripsiJSTPK" focusTraversable="false" lineSpacing="8.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-subbody-large" text="Deskripsi Jurusan" textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets left="48.0" right="48.0" top="12.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="RIGHT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-body" text="Program Studi" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets left="48.0" right="48.0" top="48.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" spacing="32.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <Button fx:id="buttonFisika" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-fisika" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="buttonTeknikKelautan" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-teknikkelautan" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="buttonTeknologiPangan" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-teknologipangan" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="buttonTeknikPerkapalan" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-teknikperkapalan" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="42.0" left="48.0" right="48.0" top="24.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="24.0" right="24.0" />
+                                 </VBox.margin>
+                              </VBox>
+                              <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="320.0" styleClass="vbox-majorstudyprograms-container-1" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets top="32.0" />
+                                       </VBox.margin>
+                                       <styleClass>
+                                          <String fx:value="imageview-logo-jurusan" />
+                                          <String fx:value="image-jtip" />
+                                       </styleClass>
+                                    </ImageView>
+                                    <Label fx:id="namaJTIP" contentDisplay="RIGHT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-body" text="Nama Jurusan" textAlignment="RIGHT" textOverrun="WORD_ELLIPSIS" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets left="48.0" right="48.0" top="24.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="deskripsiJTIP" focusTraversable="false" lineSpacing="8.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-subbody-large" text="Deskripsi Jurusan" textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets left="48.0" right="48.0" top="12.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="RIGHT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-body" text="Program Studi" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets left="48.0" right="48.0" top="48.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" spacing="32.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <Button fx:id="buttonRekayasaKeselamatan" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-rekayasakeselamatan" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="buttonTeknikElektro" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-teknikelektro" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="buttonTeknikIndustri" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-teknikindustri" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="buttonTeknikKimia" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-teknikkimia" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="buttonTeknikLogistik" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-tekniklogistik" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="buttonTeknikMesin" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-teknikmesin" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="42.0" left="48.0" right="48.0" top="24.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="24.0" right="24.0" />
+                                 </VBox.margin>
+                              </VBox>
+                              <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="320.0" styleClass="vbox-majorstudyprograms-container-1" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets top="32.0" />
+                                       </VBox.margin>
+                                       <styleClass>
+                                          <String fx:value="imageview-logo-jurusan" />
+                                          <String fx:value="image-jtsp" />
+                                       </styleClass>
+                                    </ImageView>
+                                    <Label fx:id="namaJTSP" contentDisplay="RIGHT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-body" text="Nama Jurusan" textAlignment="RIGHT" textOverrun="WORD_ELLIPSIS" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets left="48.0" right="48.0" top="24.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="deskripsiJTSP" focusTraversable="false" lineSpacing="8.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-subbody-large" text="Deskripsi Jurusan" textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets left="48.0" right="48.0" top="12.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="RIGHT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-body" text="Program Studi" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets left="48.0" right="48.0" top="48.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" spacing="32.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <Button fx:id="buttonArsitektur" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-arsitektur" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="buttonDesainKomunikasiVisual" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-desainkomunikasivisual" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="buttonPerencanaanWilayahdanKota" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-perencanaanwilayahdankota" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="buttonTeknikSipil" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-tekniksipil" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="42.0" left="48.0" right="48.0" top="24.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="24.0" right="24.0" />
+                                 </VBox.margin>
+                              </VBox>
+                              <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="320.0" styleClass="vbox-majorstudyprograms-container-1" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets top="32.0" />
+                                       </VBox.margin>
+                                       <styleClass>
+                                          <String fx:value="imageview-logo-jurusan" />
+                                          <String fx:value="image-jikl" />
+                                       </styleClass>
+                                    </ImageView>
+                                    <Label fx:id="namaJIKL" contentDisplay="RIGHT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-body" text="Nama Jurusan" textAlignment="RIGHT" textOverrun="WORD_ELLIPSIS" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets left="48.0" right="48.0" top="24.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="deskripsiJIKL" focusTraversable="false" lineSpacing="8.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-subbody-large" text="Deskripsi Jurusan" textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets left="48.0" right="48.0" top="12.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="RIGHT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-body" text="Program Studi" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets left="48.0" right="48.0" top="48.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" spacing="32.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <Button fx:id="buttonTeknikLingkungan" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-tekniklingkungan" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="buttonTeknikMaterialdanMetalurgi" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" graphicTextGap="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefWidth="120.0" styleClass="vbox-majorstudyprograms-container-2" text="Nama Prodi" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" HBox.hgrow="ALWAYS">
+                                             <graphic>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <styleClass>
+                                                      <String fx:value="imageview-logo-prodi" />
+                                                      <String fx:value="image-teknikmaterialdanmetalurgi" />
+                                                   </styleClass>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font name="Inter Medium" size="12.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="42.0" left="48.0" right="48.0" top="24.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="42.0" left="24.0" right="24.0" />
+                                 </VBox.margin>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+                  <HBox alignment="BOTTOM_LEFT" layoutX="24.0" layoutY="24.0" minHeight="48.0" style="-fx-background-color: gray-50;" styleClass="hbox-majorstudyprograms-head" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="2.0" />
+                  <Label fx:id="headingLabel" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-heading" text="Current Major &amp; Study Programs" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="24.0" />
+                  <Button fx:id="badges" alignment="CENTER" focusTraversable="false" layoutX="321.0" layoutY="24.0" mnemonicParsing="false" style="-fx-background-color: #FEF3F2; -fx-background-radius: 24; -fx-border-color: #FECDCA; -fx-border-width: 1; -fx-border-radius: 24; -fx-padding: 2 8 2 8;" text="Outdated" textAlignment="CENTER" textFill="#b42318" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="26.0">
+                     <font>
+                        <Font name="Inter Medium" size="12.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip opacity="0.75" text="This data was taken directly on the official ITK website which is not updated enough." wrapText="true">
+                           <font>
+                              <Font name="Inter Medium" size="12.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </Button>
+                  <ScrollPane fx:id="prodiInformationPane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="scrollpane-majorstudyprograms-root" vbarPolicy="ALWAYS" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: gray-50;">
+                           <children>
+                              <Label fx:id="namaProdiLabel" alignment="TOP_CENTER" focusTraversable="false" maxWidth="1.7976931348623157E308" styleClass="label-heading" text="Nama Prodi" textAlignment="CENTER" wrapText="true" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets top="72.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="nomorProdiLabel" alignment="TOP_CENTER" focusTraversable="false" maxWidth="1.7976931348623157E308" styleClass="label-subbody-large" text="Nomor Prodi" textAlignment="CENTER" wrapText="true" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets top="8.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ImageView fx:id="imageProdi" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" styleClass="imageview-logo-jurusan" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets top="32.0" />
+                                 </VBox.margin>
+                              </ImageView>
+                              <Label fx:id="deskripsiProdiLabel" alignment="TOP_LEFT" focusTraversable="false" lineSpacing="8.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" styleClass="label-subbody-large" text="Deskripsi Prodi" textAlignment="JUSTIFY" textOverrun="WORD_ELLIPSIS" wrapText="true" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets bottom="32.0" left="96.0" right="96.0" top="32.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+                  <Button fx:id="backButton" alignment="CENTER" focusTraversable="false" layoutX="331.0" layoutY="34.0" mnemonicParsing="false" onAction="#hideProdiInformation" text="Back" textAlignment="CENTER" textFill="#b42318" visible="false" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="32.0">
+                     <font>
+                        <Font name="Inter Medium" size="12.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="label-heading" />
+                        <String fx:value="button-majorstudyprograms-back" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
