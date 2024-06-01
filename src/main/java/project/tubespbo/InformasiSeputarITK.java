@@ -12,7 +12,7 @@ public class InformasiSeputarITK extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Views/LandingPageView.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Views/LandingView.fxml")));
 
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("Styles/LandingPage.css")).toExternalForm());

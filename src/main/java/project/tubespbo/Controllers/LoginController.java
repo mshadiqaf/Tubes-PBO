@@ -19,7 +19,7 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class LoginPageController implements Initializable {
+public class LoginController implements Initializable {
 
     //  KONDISI AWAL MODE TEMA PROGRAM = LIGHT MODE
     private boolean isLightMode = true;
@@ -71,14 +71,14 @@ public class LoginPageController implements Initializable {
         guestSignInButton.setDisable(true);
 
 //      MENYIMPAN DATA OBJEK AKUN KEDALAM SESSION
-        LoginPageController.session = loginModel;
+        LoginController.session = loginModel;
 
 //      LOAD SCENE HALAMAN UTAMA
         Platform.runLater(() -> {
 
 //          TRY AND CATCH UNTUK ERROR
             try {
-                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/project/tubespbo/Views/MainPageView.fxml")));
+                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/project/tubespbo/Views/SideBarView.fxml")));
                 Scene mainPageScene = new Scene(root);
 
 //              MENDAPATKAN INFORMASI UKURAN SCENE SEBELUMNYA SEHINGGA UKURAN SESUAI DENGAN SCENE BARU
@@ -249,7 +249,7 @@ public class LoginPageController implements Initializable {
 
     //  GETTER UNTUK MENDAPATKAN INFORMASI TENTANG DATA AKUN MELALUI SESSION
     public static void setSession(LoginModel session) {
-        LoginPageController.session = session;
+        LoginController.session = session;
     }
 
 }

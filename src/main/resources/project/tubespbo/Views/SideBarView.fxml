@@ -16,13 +16,13 @@
 <?import javafx.scene.text.Font?>
 <?import org.controlsfx.control.ToggleSwitch?>
 
-<HBox fx:id="parentContainer" alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="root" stylesheets="@../Styles/MainLightTheme.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.tubespbo.Controllers.MainPage.MainPageController">
+<HBox fx:id="parentContainer" alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="root" stylesheets="@../Styles/MainLightTheme.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.tubespbo.Controllers.SideBar.SideBarController">
    <children>
       <AnchorPane fx:id="sideBar" maxWidth="280.0" minWidth="280.0" prefWidth="280.0" styleClass="vbox-sidepane" HBox.hgrow="ALWAYS">
          <children>
             <VBox alignment="BOTTOM_CENTER" layoutX="100.0" layoutY="273.0" maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <Button fx:id="logoutButton" focusTraversable="false" maxHeight="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" text="Log Out" textOverrun="CLIP">
+                  <Button fx:id="logoutButton" focusTraversable="false" maxHeight="42.0" maxWidth="1.7976931348623157E308" minHeight="42.0" mnemonicParsing="false" onAction="#logout" prefHeight="42.0" text="Log Out" textOverrun="CLIP">
                      <styleClass>
                         <String fx:value="button-sidepane" />
                         <String fx:value="image-logout" />
@@ -31,7 +31,7 @@
                         <ImageView fx:id="imageLogout" fitHeight="20.0" fitWidth="20.0" styleClass="image-logout" />
                      </graphic>
                      <VBox.margin>
-                        <Insets bottom="24.0" left="12.0" right="12.0" />
+                        <Insets bottom="24.0" left="12.0" right="12.0" top="24.0" />
                      </VBox.margin>
                   </Button>
                   <Line endX="100.0" fill="#ff000000" startX="-150.0" stroke="#ffffff00" styleClass="separator" />
@@ -114,16 +114,16 @@
                         <Insets bottom="4.0" left="28.0" right="32.0" top="24.0" />
                      </VBox.margin>
                   </Label>
-                  <Button fx:id="dashboardButton" focusTraversable="false" maxHeight="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" mnemonicParsing="false" onAction="#loadDashboardView" prefHeight="40.0" text="Dashboard">
+                  <Button fx:id="dashboardButton" focusTraversable="false" maxHeight="42.0" maxWidth="1.7976931348623157E308" minHeight="42.0" mnemonicParsing="false" onAction="#loadDashboard" prefHeight="42.0" text="Dashboard">
                      <VBox.margin>
-                        <Insets left="12.0" right="12.0" top="2.0" />
+                        <Insets left="12.0" right="12.0" top="12.0" />
                      </VBox.margin>
                      <styleClass>
                         <String fx:value="button-sidepane" />
                         <String fx:value="button-sidepane-dashboard" />
                      </styleClass>
                      <graphic>
-                        <ImageView fx:id="imageDashboard" fitHeight="20.0" fitWidth="20.0" styleClass="image-dashboard" />
+                        <ImageView fx:id="dashboardImage" fitHeight="20.0" fitWidth="20.0" styleClass="image-dashboard" />
                      </graphic>
                      <textFill>
                         <LinearGradient endX="1.0" endY="1.0" startX="1.0">
@@ -147,45 +147,34 @@
                         </LinearGradient>
                      </textFill>
                   </Button>
-                  <Button fx:id="interactiveMapButton" focusTraversable="false" maxHeight="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" mnemonicParsing="false" onAction="#loadInteractiveMapView" prefHeight="40.0" text="Interactive Map">
+                  <Button fx:id="interactiveMapButton" focusTraversable="false" maxHeight="42.0" maxWidth="1.7976931348623157E308" minHeight="42.0" mnemonicParsing="false" onAction="#loadInteractiveMap" prefHeight="42.0" text="Interactive Map">
                      <VBox.margin>
-                        <Insets left="12.0" right="12.0" top="2.0" />
+                        <Insets left="12.0" right="12.0" top="4.0" />
                      </VBox.margin>
                      <styleClass>
                         <String fx:value="button-sidepane" />
                         <String fx:value="button-sidepane-interactivemap" />
                      </styleClass>
                      <graphic>
-                        <ImageView fx:id="imageInteractiveMap" fitHeight="20.0" fitWidth="20.0" styleClass="image-interactivemap" />
+                        <ImageView fx:id="interactiveMapImage" fitHeight="20.0" fitWidth="20.0" styleClass="image-interactivemap" />
                      </graphic>
                   </Button>
-                  <Button fx:id="majorStudyProgramsButton" focusTraversable="false" maxHeight="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" mnemonicParsing="false" onAction="#loadMajorStudyProgramsView" prefHeight="40.0" text="Major &amp; Study Programs" textOverrun="CLIP">
+                  <Button fx:id="majorStudyProgramsButton" focusTraversable="false" maxHeight="42.0" maxWidth="1.7976931348623157E308" minHeight="42.0" mnemonicParsing="false" onAction="#loadMajorStudyPrograms" prefHeight="42.0" text="Major &amp; Study Programs" textOverrun="CLIP">
                      <VBox.margin>
-                        <Insets left="12.0" right="12.0" top="2.0" />
+                        <Insets left="12.0" right="12.0" top="4.0" />
                      </VBox.margin>
                      <styleClass>
                         <String fx:value="button-sidepane" />
                         <String fx:value="button-sidepane-majorstudyprograms" />
                      </styleClass>
                      <graphic>
-                        <ImageView fx:id="imageMajorStudyPrograms" fitHeight="20.0" fitWidth="20.0" styleClass="image-majorstudyprograms" />
-                     </graphic>
-                  </Button>
-                  <Button fx:id="aboutButton" focusTraversable="false" maxHeight="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" mnemonicParsing="false" onAction="#loadAboutView" prefHeight="40.0" text="About">
-                     <VBox.margin>
-                        <Insets left="12.0" right="12.0" top="2.0" />
-                     </VBox.margin>
-                     <styleClass>
-                        <String fx:value="button-sidepane" />
-                        <String fx:value="button-sidepane-about" />
-                     </styleClass>
-                     <graphic>
-                        <ImageView fx:id="imageAbout" fitHeight="20.0" fitWidth="20.0" styleClass="image-about" />
+                        <ImageView fx:id="majorStudyProgramsImage" fitHeight="20.0" fitWidth="20.0" styleClass="image-majorstudyprograms" />
                      </graphic>
                   </Button>
                </children>
             </VBox>
          </children>
       </AnchorPane>
+      <AnchorPane fx:id="pageContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
    </children>
 </HBox>

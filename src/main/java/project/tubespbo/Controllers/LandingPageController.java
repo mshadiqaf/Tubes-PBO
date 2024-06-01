@@ -34,7 +34,7 @@ public class LandingPageController {
         startButton.setDisable(true);
 
 //      LOAD SCENE HALAMAN LOGIN
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/project/tubespbo/Views/LoginPageView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/project/tubespbo/Views/LoginView.fxml"));
         Parent root = loader.load();
 
 //      MENDAPATKAN INFORMASI POSISI SCENE SEBELUMNYA
