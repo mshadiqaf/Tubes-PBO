@@ -8,4 +8,3 @@ public interface InteractiveMapInterface {
     void showBuildingInformation(BangunanModel bangunan);
 
 }
-

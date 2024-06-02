@@ -1,4 +1,4 @@
-package project.tubespbo.Controllers.SideBar;
+package project.tubespbo.Controllers.MainPage;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,6 +12,7 @@ import javafx.scene.shape.Rectangle;
 import project.tubespbo.Interfaces.InteractiveMapInterface;
 import project.tubespbo.Models.BangunanModel;
 import project.tubespbo.Models.GedungModel;
+import project.tubespbo.Models.LaboratoriumModel;
 import project.tubespbo.Models.RuanganModel;
 
 import java.net.URL;
@@ -83,29 +84,12 @@ public class InteractiveMapController implements Initializable, InteractiveMapIn
         GedungModel gedungE = new GedungModel("Gedung E", "Gedung E adalah salah satu dari 3 gedung perkuliahan utama di Institut Teknologi Kalimantan. Memiliki 3 lantai dengan masing masing lantai memiliki 7 ruangan kelas kecuali di lantai 1 dan 2 WC untuk Mahasiswa/i di setiap lantai dan bonus mushola kecil di lantai 3. Khusus di Gedung E, lantai 1 memiliki ruangan ruangan khusus seperti Laboratorium Fisika, Laboratorium Kimia, dan Inkubator.", ruanganGedungE);
         GedungModel gedungF = new GedungModel("Gedung F", "Gedung F adalah salah satu dari 3 gedung perkuliahan utama di Institut Teknologi Kalimantan. Gedung tersebut memiliki 3 lantai dengan masing masing lantai memiliki 7 ruangan kelas kecuali di lantai 1 dan 2 WC untuk Mahasiswa/i di setiap lantai dan bonus mushola kecil di lantai 3. Biasa Gedung ini digunakan untuk ruangan Mata kuliah dari Khusus prodi, Mata kuliah umum, dan Mata kuliah TPB.", ruanganGedungF);
         GedungModel gedungG = new GedungModel("Gedung G", "Gedung G adalah salah satu dari 3 gedung perkuliahan utama di Institut Teknologi Kalimantan. Gedung tersebut memiliki 3 lantai dengan masing masing lantai memiliki 7 ruangan kelas kecuali di lantai 1 dan 2 WC untuk Mahasiswa/i di setiap lantai dan bonus mushola kecil di lantai 3. Biasa Gedung ini digunakan untuk ruangan Mata kuliah dari Khusus prodi, Mata kuliah umum, dan Mata kuliah TPB.", ruanganGedungG);
-        GedungModel labter1 = new GedungModel("Laboratorium Terpadu 1", "Gedung Laboratorium Terpadu 1 atau biasa disebut dengan Gedung Labter 1 atau Labter lama (soon) adalah Gedung di Institut Teknologi Kalimantan yang merupakan gedung pertama yang mencakup Ruangan khusus untuk Praktik beberapa Prodi. Beberapanya yaitu Laboratorium Kimia dan Laboratorium Fisika yang lebih luas daripada di Gedung E, lalu Ruangan Studio khusus Arsitektur dan DKV, lalu Ruangan Laboratorium Elektronika, Laboratorium (nanti), Laboratorium (nanti), dan Laboratorium Komputer. selain itu juga terdapat sebuah ruangan Kuliah Umum, Auditorium, dan Ruangan (lupa di samping musola), dengan terdapat musola kecil diantara dua ruangan tersebut.", ruanganLabter1);
+        LaboratoriumModel labter1 = new LaboratoriumModel("Laboratorium Terpadu 1", "Gedung Laboratorium Terpadu 1 atau biasa disebut dengan Gedung Labter 1 atau Labter lama (soon) adalah Gedung di Institut Teknologi Kalimantan yang merupakan gedung pertama yang mencakup Ruangan khusus untuk Praktik beberapa Prodi. Beberapanya yaitu Laboratorium Kimia dan Laboratorium Fisika yang lebih luas daripada di Gedung E, lalu Ruangan Studio khusus Arsitektur dan DKV, lalu Ruangan Laboratorium Elektronika, Laboratorium (nanti), Laboratorium (nanti), dan Laboratorium Komputer. selain itu juga terdapat sebuah ruangan Kuliah Umum, Auditorium, dan Ruangan (lupa di samping musola), dengan terdapat musola kecil diantara dua ruangan tersebut.", ruanganLabter1);
 
         setupButtons(gedungA, gedungB, gedungE, gedungF, gedungG, labter1);
-
-        printGedungInfo(gedungA);
-        printGedungInfo(gedungB);
-        printGedungInfo(gedungE);
-        printGedungInfo(gedungF);
-        printGedungInfo(gedungG);
-        printGedungInfo(labter1);
     }
 
-    private static void printGedungInfo(GedungModel gedung) {
-        System.out.println("Nama Gedung: " + gedung.getNama());
-        System.out.println("Deskripsi Gedung: " + gedung.getDeskripsi());
-        System.out.println("Ruangan di Gedung:");
-        for (RuanganModel ruangan : gedung.getRuangan()) {
-            System.out.println("- " + ruangan.getNama());
-        }
-        System.out.println();
-    }
-
-    private void setupButtons(GedungModel gedungA, GedungModel gedungB, GedungModel gedungE, GedungModel gedungF, GedungModel gedungG, GedungModel labter1) {
+    private void setupButtons(GedungModel gedungA, GedungModel gedungB, GedungModel gedungE, GedungModel gedungF, GedungModel gedungG, LaboratoriumModel labter1) {
         buttonGedungA.setOnAction(event -> showBuildingInformation(gedungA));
         buttonGedungB.setOnAction(event -> showBuildingInformation(gedungB));
         buttonGedungE.setOnAction(event -> showBuildingInformation(gedungE));
@@ -117,21 +101,6 @@ public class InteractiveMapController implements Initializable, InteractiveMapIn
     public void zoomMap() {
         map.scaleXProperty().bind(zoomSlider.valueProperty());
         map.scaleYProperty().bind(zoomSlider.valueProperty());
-
-        zoomSlider.valueProperty().addListener((obs, oldValue, newValue) -> {
-            double scaleFactor = newValue.doubleValue() / oldValue.doubleValue();
-            adjustButtonPosition(buttonGedungA, scaleFactor);
-            adjustButtonPosition(buttonGedungB, scaleFactor);
-            adjustButtonPosition(buttonGedungE, scaleFactor);
-            adjustButtonPosition(buttonGedungF, scaleFactor);
-            adjustButtonPosition(buttonGedungG, scaleFactor);
-            adjustButtonPosition(buttonLabter1, scaleFactor);
-        });
-    }
-
-    private void adjustButtonPosition(Button button, double scaleFactor) {
-        button.setTranslateX(button.getTranslateX() * scaleFactor);
-        button.setTranslateY(button.getTranslateY() * scaleFactor);
     }
 
     private void createRoundedCorner(Node node, double width, double height) {
@@ -141,8 +110,6 @@ public class InteractiveMapController implements Initializable, InteractiveMapIn
         node.setClip(rectangle);
     }
 
-    @FXML
-    @Override
     public void showBuildingInformation(BangunanModel bangunan) {
         mapPane.setVisible(false);
         informationPane.setVisible(true);
@@ -161,7 +128,6 @@ public class InteractiveMapController implements Initializable, InteractiveMapIn
         }
 
         ruanganBangunan.setText("Ruangan dari " + bangunan.getNama() + " meliputi : " + ruanganText.toString());
-
 
     }
 

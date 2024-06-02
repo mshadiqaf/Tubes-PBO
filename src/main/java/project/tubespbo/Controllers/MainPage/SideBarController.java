@@ -1,4 +1,4 @@
-package project.tubespbo.Controllers.SideBar;
+package project.tubespbo.Controllers.MainPage;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;

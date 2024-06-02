@@ -1,4 +1,4 @@
-package project.tubespbo.Controllers.SideBar;
+package project.tubespbo.Controllers.MainPage;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -58,7 +58,7 @@ public class MajorStudyProgramsController implements Initializable {
     private final JurusanModel JMTI = new JurusanModel(
             "Jurusan Matematika dan Teknologi Informasi",
             "Jurusan Matematika dan Teknologi Informasi (JMTI) sebagai salah satu dari lima jurusan yang ada di Institut Teknologi Kalimantan yang didirikan pada tahun 2015. JMTI merupakan jurusan terbesar yang memiliki lima program studi yaitu, Matematika, Sistem Informasi, Informatika, Statistika, dan Ilmu Aktuaria dengan jumlah keseluruhan 803 mahasiswa. Pada tahun 2021, JMTI menginisiasi pendirian program studi baru Bisnis Digital. Saat ini, JMTI ITK memiliki 44 dosen tetap, dengan 10 dosen Asisten Ahli dan 3 dosen sedang melaksanakan studi lanjut program doctor di kampus dalam negeri dan luar negeri.",
-                daftarProdiJMTI
+            daftarProdiJMTI
     );
     private final JurusanModel JSTPK = new JurusanModel(
             "Jurusan Sains, Teknologi Pangan, dan Kemaritiman",
